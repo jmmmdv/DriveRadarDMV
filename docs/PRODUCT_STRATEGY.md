@@ -106,6 +106,7 @@ DriveRadarDMV does not compete on navigation. It competes on **pre-shift intelli
 3. **Honest data** — Show source freshness; never imply precision we do not have.
 4. **Free to start** — Public data and a useful free tier before premium features.
 5. **No dark patterns** — Clear labels when data is estimated, delayed, or unavailable.
+6. **Privacy-first** — Measure aggregate product usage to improve the briefing; never track trips, passengers, precise location, or sell driver data. See [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md).
 
 ---
 
@@ -130,6 +131,7 @@ Success for Phase 0: visitors understand *what* DriveRadarDMV is, *who* it is fo
 | Site deploys successfully | ✅ Vercel production URL live |
 | Homepage clarity | Qualitative feedback from 5+ drivers |
 | GitHub repo professionalism | README + docs complete |
+| Analytics plan documented | ✅ [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) — implementation deferred |
 
 ### Phase 1 (first live data)
 
@@ -164,5 +166,6 @@ Success for Phase 0: visitors understand *what* DriveRadarDMV is, *who* it is fo
 
 - [README](../README.md) — Project overview, setup, screenshots, and live demo
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md) — Build phases and milestones
+- [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) — Privacy-safe analytics planning
 - [DATA_SOURCES.md](./DATA_SOURCES.md) — Planned data integrations
 - [MONETIZATION.md](./MONETIZATION.md) — Revenue model

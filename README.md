@@ -209,6 +209,7 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md) | Phased build plan and milestones |
 | [docs/ISSUES_BACKLOG.md](docs/ISSUES_BACKLOG.md) | GitHub-style issue backlog for Phases 1–5 |
 | [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Planned free/public sources (no paid APIs yet) |
+| [docs/ANALYTICS_PLAN.md](docs/ANALYTICS_PLAN.md) | Privacy-first analytics planning (not implemented yet) |
 | [docs/MONETIZATION.md](docs/MONETIZATION.md) | Revenue model and pricing hypotheses |
 
 All docs describe the **static MVP stage** unless a phase is explicitly labeled future work.
@@ -234,6 +235,7 @@ driveradardmv/
 │   ├── PRODUCT_STRATEGY.md
 │   ├── MVP_ROADMAP.md
 │   ├── ISSUES_BACKLOG.md
+│   ├── ANALYTICS_PLAN.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/

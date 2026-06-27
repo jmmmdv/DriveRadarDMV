@@ -441,20 +441,28 @@ Can ship as Google Form initially for zero backend work.
 |---|---|
 | **Priority** | Medium |
 | **Type** | Feature |
+| **Status** | **Plan documented** — see [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md); not implemented in app |
 
 **Description**  
-Add privacy-friendly analytics (e.g. Vercel Analytics, Plausible, or simple aggregated Vercel Web Analytics) to understand traffic without invasive tracking.
+Add privacy-friendly analytics to understand traffic and section engagement without invasive tracking. Planning is complete; implementation waits until Phase 0 exit or early Phase 1.
 
-**Acceptance criteria**
+**Planning complete**
 
-- [ ] Analytics provider chosen and documented
-- [ ] No cookies required OR cookie banner plan documented if required
+- [x] [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) — goals, safe metrics, forbidden data, event examples, risk checklist, phases
+- [x] Product principle: privacy-first analytics ([PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md))
+
+**Acceptance criteria (implementation)**
+
+- [ ] Provider chosen per plan (default recommendation: Vercel Analytics — dashboard enable, no repo secrets)
+- [ ] No tracking scripts added until this issue is actively worked; no cookies unless documented with consent plan
+- [ ] Safe MVP metrics only: homepage visits, section engagement, waitlist UI interactions, CTA clicks, device category, region-level interest
+- [ ] Explicitly **no** trip data, passenger data, license plates, precise GPS, waitlist PII in analytics payloads
 - [ ] Privacy note added to README or future privacy policy draft
-- [ ] Page views visible for homepage and `/briefing` if added
-- [ ] No PII collected by default
+- [ ] Page views visible for homepage (and `/briefing` if added)
+- [ ] Event names documented in ANALYTICS_PLAN.md when live
 
 **Notes**  
-Vercel Analytics free tier is a sensible default for this stack.
+Do not install Plausible, PostHog, or other SDKs until provider decision is recorded in ANALYTICS_PLAN.md. Vercel Analytics free tier is the sensible first step for this stack — enable in Vercel dashboard without npm dependencies.
 
 ---
 
