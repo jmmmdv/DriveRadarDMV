@@ -4,7 +4,7 @@ Search and social sharing strategy for DriveRadarDMV. This document describes **
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Implementation:** [`app/layout.jsx`](../app/layout.jsx)
 
-**Related:** [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md) · [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) · [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) · [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)
+**Related:** [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md) · [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) · [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) · [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md) · [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)
 
 ---
 
@@ -46,7 +46,7 @@ Current description explicitly mentions **MVP preview**, **live NWS weather**, a
 
 | Item | Status |
 |---|---|
-| Open Graph share image (`og-image.png`) | Planned — see [Open Graph image plan](#open-graph-image-plan) |
+| Open Graph share image | Planned — [`/og/driveradardmv-og.png`](../public/og/) — see [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md) |
 | `twitter:images` | Waiting on OG asset |
 | Custom domain canonical (`driveradardmv.com`) | Planned — DNS steps in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md); then update `metadataBase` and canonical in `app/layout.jsx` |
 | `sitemap.xml` / `robots.txt` | Future Phase 1 |
@@ -85,7 +85,7 @@ Avoid keyword stuffing. One clear primary phrase per page when content expands.
 
 - [x] Root layout metadata (title, description, OG, Twitter, robots, canonical)
 - [x] Document plan in this file
-- [ ] Add static OG image and wire `openGraph.images` / `twitter.images`
+- [ ] Add static OG image at `public/og/driveradardmv-og.png` and wire `openGraph.images` / `twitter.images` — [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md)
 - [ ] Connect custom domain; update `metadataBase` and canonical URLs — follow [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) **After domain is live** section
 
 ### Phase 1 — Discoverability
@@ -130,24 +130,25 @@ All content should repeat: **decision aid, not navigation or earnings guarantee*
 
 ## Open Graph image plan
 
-Social platforms prefer **1200×630 px** (1.91:1). Recommended approach for Phase 0:
+Full design spec, checklist, and metadata wiring steps: **[OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md)**.
 
-1. **Asset:** `public/og-image.png` (static PNG, no dynamic route yet).
-2. **Design:** DriveRadarDMV wordmark, tagline *“DMV driver intelligence MVP”*, subtle map or corridor motif, brand colors from homepage (`--accent`, dark header).
-3. **Metadata:** Add to `layout.jsx`:
+Summary:
 
-   ```javascript
-   openGraph: {
-     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "DriveRadarDMV — DMV driver intelligence MVP" }]
-   },
-   twitter: {
-     card: "summary_large_image",
-     images: ["/og-image.png"]
-   }
-   ```
+| Item | Detail |
+|---|---|
+| **Recommended size** | 1200 × 630 px |
+| **Recommended path** | `public/og/driveradardmv-og.png` → public URL `/og/driveradardmv-og.png` |
+| **Metadata** | Add `openGraph.images` and `twitter.images` in `layout.jsx` **only after** the PNG is committed |
+| **Twitter card today** | `summary` (text-only) — switch to `summary_large_image` when image ships |
 
-4. **Verify:** [opengraph.xyz](https://www.opengraph.xyz/) or platform debuggers after deploy.
-5. **Optional later:** `app/opengraph-image.jsx` for dynamic OG (Next.js) — not needed for MVP.
+Do not reference the image in metadata until the file exists — broken preview URLs hurt shares.
+
+Legacy note: earlier drafts mentioned `public/og-image.png`; the canonical path is now **`/og/driveradardmv-og.png`**.
+
+### Verify (after image ships)
+
+- [opengraph.xyz](https://www.opengraph.xyz/) or platform debuggers after deploy
+- Optional later: `app/opengraph-image.jsx` for dynamic OG — not needed for MVP
 
 Until the PNG exists, Twitter uses `summary` (no image) to avoid broken previews.
 
@@ -186,7 +187,7 @@ After metadata changes, spot-check:
 | Issue | Status |
 |---|---|
 | SEO metadata improvement | ✅ Shipped — see layout + this doc |
-| Open Graph image plan | 📋 Next — asset + `openGraph.images` |
+| Open Graph image | 📋 Plan in [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md); asset `/og/driveradardmv-og.png` not shipped |
 | Custom domain setup | 📋 Plan in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md); update `metadataBase` after cutover |
 
 Details: [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)

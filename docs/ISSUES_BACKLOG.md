@@ -102,7 +102,7 @@ Keep copy honest: static previews vs live NWS weather. OG share image is a separ
 
 **Next SEO tasks**
 
-- [ ] Add Open Graph image (`public/og-image.png`) — see SEO_PLAN.md
+- [ ] Add Open Graph image (`public/og/driveradardmv-og.png`) — see [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md)
 - [ ] `sitemap.xml` / `robots.js` when more routes ship
 - [ ] Update `metadataBase` when custom domain connects
 
@@ -113,23 +113,56 @@ Keep copy honest: static previews vs live NWS weather. OG share image is a separ
 | Field | Value |
 |---|---|
 | **Priority** | Medium |
-| **Type** | Design |
+| **Type** | Design / Documentation |
+| **Status** | **Plan documented** — PNG not in repo; see [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md) |
 
 **Description**  
-Plan and add a share preview image for Slack, iMessage, LinkedIn, and Twitter cards — e.g. `public/og-image.png` or dynamic OG route.
+Plan and add a share preview image for Slack, iMessage, LinkedIn, X, and startup link sharing.
 
 **Depends on:** SEO metadata improvement (shipped)
 
-**Acceptance criteria**
+**Planning complete**
 
-- [ ] Document recommended dimensions (1200×630) and brand colors in issue or `docs/assets/`
-- [x] OG image plan documented in [SEO_PLAN.md](./SEO_PLAN.md)
-- [ ] OG image file added to repo OR documented plan for static asset generation
-- [ ] `openGraph.images` configured in layout metadata
-- [ ] Preview verified with [opengraph.xyz](https://www.opengraph.xyz/) or similar
+- [x] [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md) — what OG is, why it matters, 1200×630 spec, content guide, checklist
+- [x] Placeholder folder `public/og/` (`.gitkeep`)
+- [x] Canonical asset path: `public/og/driveradardmv-og.png` → `/og/driveradardmv-og.png`
+- [x] [SEO_PLAN.md](./SEO_PLAN.md) updated with future image path
+- [x] `layout.jsx` does **not** reference missing image (honest text-only previews)
+
+**Acceptance criteria (asset + metadata — future)**
+
+- [ ] Design and export `driveradardmv-og.png` at 1200×630 per OPEN_GRAPH_PLAN.md
+- [ ] File committed to `public/og/driveradardmv-og.png`
+- [ ] `openGraph.images` and `twitter.images` added to [`app/layout.jsx`](../app/layout.jsx)
+- [ ] Twitter card updated to `summary_large_image`
+- [ ] Preview verified with [opengraph.xyz](https://www.opengraph.xyz/) or similar after deploy
 
 **Notes**  
-Static PNG is fine for Phase 1; dynamic OG can wait.
+Static PNG only — no image npm deps, no external OG services. Wire metadata only after file exists.
+
+---
+
+### Issue: Create and ship official Open Graph image
+
+| Field | Value |
+|---|---|
+| **Priority** | Medium |
+| **Type** | Design |
+| **Depends on** | Open Graph plan (documented) |
+
+**Description**  
+Produce the official `driveradardmv-og.png` asset and enable rich link previews in production.
+
+**Acceptance criteria**
+
+- [ ] PNG matches brand and content guidelines in [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md)
+- [ ] Product name, tagline, DMV driver intelligence theme, module hints (weather / events / airports / zones)
+- [ ] “Live MVP preview” or equivalent honest label — no earnings guarantees
+- [ ] `npm run build` passes after metadata update
+- [ ] Share test on at least one platform (Slack, iMessage, LinkedIn, or X)
+
+**Notes**  
+Use Figma, Canva, or similar — do not add repo dependencies for image generation.
 
 ---
 

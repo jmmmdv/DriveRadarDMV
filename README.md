@@ -212,6 +212,7 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | [docs/ANALYTICS_PLAN.md](docs/ANALYTICS_PLAN.md) | Privacy-first analytics planning (not implemented yet) |
 | [docs/SEO_PLAN.md](docs/SEO_PLAN.md) | SEO metadata, keywords, and sharing strategy |
 | [docs/CUSTOM_DOMAIN_SETUP.md](docs/CUSTOM_DOMAIN_SETUP.md) | Connect driveradardmv.com to Vercel (manual DNS plan) |
+| [docs/OPEN_GRAPH_PLAN.md](docs/OPEN_GRAPH_PLAN.md) | Social share preview image plan (OG image not shipped yet) |
 | [docs/MONETIZATION.md](docs/MONETIZATION.md) | Revenue model and pricing hypotheses |
 
 All docs describe the **static MVP stage** unless a phase is explicitly labeled future work.
@@ -240,6 +241,7 @@ driveradardmv/
 │   ├── ANALYTICS_PLAN.md
 │   ├── SEO_PLAN.md
 │   ├── CUSTOM_DOMAIN_SETUP.md
+│   ├── OPEN_GRAPH_PLAN.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/
