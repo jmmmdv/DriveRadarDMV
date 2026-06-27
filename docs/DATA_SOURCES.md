@@ -4,7 +4,7 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
-**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events use **static demo cards** in [`lib/events.js`](../lib/events.js). Airports and demand zones remain static sample cards on the homepage.
+**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events use **static demo cards** in [`lib/events.js`](../lib/events.js). Airports use **static demo cards** in [`lib/airports.js`](../lib/airports.js). Demand zones remain a static sample card on the homepage.
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
 
@@ -58,6 +58,30 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
+### Airports — static MVP preview *(shipped as demo)*
+
+| Item | Detail |
+|---|---|
+| **Source** | Static data in [`lib/airports.js`](../lib/airports.js) |
+| **Cost** | Free (no API) |
+| **API key** | Not required |
+| **Implementation** | [`app/components/AirportIntelligence.jsx`](../app/components/AirportIntelligence.jsx) |
+| **Status** | MVP preview only — **not live flight data** |
+| **Airports** | DCA (Reagan National), IAD (Dulles), BWI (Baltimore-Washington) |
+
+**Planned free/public sources for live airport summaries (Phase 1+):**
+
+| Source | Type | Cost | Coverage | Notes |
+|---|---|---|---|---|
+| [FAA NAS Status](https://nasstatus.faa.gov/) | Web / API | Free | US airports | Delays and ground-stop context |
+| Airport authority public pages | HTML / RSS | Free | DCA, IAD, BWI | Flight volume proxies where available |
+
+**Use cases:** "Busy airport day" indicators, delay summaries—not individual flight tracking for passengers.
+
+**Note:** Real-time gate-level data is often licensed; Phase 1 stays at summary level. Until live feeds ship, airport cards are labeled **Sample preview**.
+
+---
+
 ## Design principles
 
 1. **Prefer official open data** — government and agency feeds over scraped third-party sites.
@@ -82,7 +106,9 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
-### Airports (DCA, IAD, BWI)
+### Airports (DCA, IAD, BWI) *(planned — live feeds)*
+
+**Current status:** Static demo cards only. See [Live integrations → Airports](#airports--static-mvp-preview-shipped-as-demo) above.
 
 | Source | Type | Cost | Coverage | Notes |
 |---|---|---|---|---|

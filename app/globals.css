@@ -590,6 +590,124 @@ main {
   margin-top: auto;
 }
 
+/* Airport intelligence */
+
+.airportsSection {
+  padding: clamp(56px, 8vw, 88px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.airportsDisclaimer {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border: 1px solid #c4b5fd;
+  border-radius: var(--radius-sm);
+  background: #f5f3ff;
+  color: #4c1d95;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.airportsMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.airportsSourceBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.airportsSourceBadge--preview {
+  background: var(--surface-muted);
+  color: var(--muted);
+}
+
+.airportsUpdated {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.airportsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.airportsCard {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.airportsCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.airportsCardTop h3 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 1.05rem;
+}
+
+.airportsBadge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.airportsDetails {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.airportsRow {
+  display: grid;
+  gap: 4px;
+}
+
+.airportsRow dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.airportsRow dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.airportsCard .signalTag {
+  margin-top: auto;
+}
+
 /* Sample cards */
 
 .previewSection {
@@ -1015,6 +1133,10 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .airportsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .roadmapGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1048,6 +1170,7 @@ main {
   .featureGrid,
   .weatherGrid,
   .eventsGrid,
+  .airportsGrid,
   .coverageList,
   .roadmapGrid {
     grid-template-columns: 1fr;

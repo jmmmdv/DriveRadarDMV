@@ -1,5 +1,6 @@
 import WeatherIntelligence from "./components/WeatherIntelligence";
 import EventsIntelligence from "./components/EventsIntelligence";
+import AirportIntelligence from "./components/AirportIntelligence";
 
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
@@ -20,14 +21,6 @@ const problemPoints = [
 ];
 
 const sampleCards = [
-  {
-    type: "Airport activity",
-    icon: "✈",
-    headline: "DCA evening arrivals",
-    detail: "Reagan National · Moderate pickup window 6–10 PM · Sample estimate",
-    signal: "Airport watch",
-    signalLevel: "medium"
-  },
   {
     type: "Demand-zone preview",
     icon: "◎",
@@ -93,7 +86,8 @@ const mvpItems = [
   { label: "Landing page & product story", done: true },
   { label: "Live weather intelligence (NWS API)", done: true },
   { label: "Events intelligence preview (static)", done: true },
-  { label: "Static preview cards (airports, demand zones)", done: true },
+  { label: "Airport intelligence preview (static)", done: true },
+  { label: "Static preview cards (demand zones)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
   { label: "Live API feeds (events, traffic, airports)", done: false },
@@ -106,7 +100,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Landing page", "Live weather (NWS)", "Events preview", "Product docs"]
+    items: ["Landing page", "Live weather (NWS)", "Events & airports preview", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -139,6 +133,7 @@ export default function Home() {
           <nav className="headerNav" aria-label="Primary">
             <a href="#weather">Weather</a>
             <a href="#events">Events</a>
+            <a href="#airports">Airports</a>
             <a href="#preview">Preview</a>
             <a href="#features">Features</a>
             <a href="#roadmap">Roadmap</a>
@@ -152,7 +147,7 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="heroContent">
-            <p className="eyebrow">DMV driver intelligence · Weather &amp; Events MVP</p>
+            <p className="eyebrow">DMV driver intelligence · Weather, Events &amp; Airports MVP</p>
             <h1>Drive smarter across DC, Maryland &amp; Virginia</h1>
             <p className="heroText">
               One regional view for weather, events, airport activity, and demand
@@ -168,9 +163,9 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Weather + Events MVP</span>
+              <span>Intelligence MVP</span>
               <span>Live NWS weather</span>
-              <span>Static event preview</span>
+              <span>Static event &amp; airport previews</span>
             </div>
           </div>
         </section>
@@ -199,13 +194,15 @@ export default function Home() {
 
         <EventsIntelligence />
 
+        <AirportIntelligence />
+
         <section className="previewSection" id="preview" aria-labelledby="preview-title">
           <div className="sectionHeader">
             <p className="sectionLabel">Intelligence preview</p>
             <h2 id="preview-title">What your daily briefing could look like</h2>
             <p className="sectionIntro">
-              These cards use <strong>static sample content</strong> for airports
-              and demand zones. Weather and events have dedicated sections above.
+              This card uses <strong>static sample content</strong> for demand
+              zones. Weather, events, and airports have dedicated sections above.
             </p>
           </div>
           <div className="sampleGrid">
@@ -289,8 +286,8 @@ export default function Home() {
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
                 This MVP includes live weather from the National Weather Service,
-                a static events intelligence preview, and sample cards for other
-                modules — no accounts or payments yet.
+                static events and airport intelligence previews, and a demand-zone
+                sample card — no accounts or payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -364,7 +361,7 @@ export default function Home() {
             <a href={REPO_URL}>GitHub</a>
             <a href="https://www.driveradardmv.com">driveradardmv.com</a>
           </div>
-          <span className="footerBadge">Weather &amp; Events MVP</span>
+          <span className="footerBadge">Intelligence MVP</span>
         </div>
       </footer>
     </>

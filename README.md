@@ -12,7 +12,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 | | |
 |---|---|
-| **Stage** | Weather & Events MVP · live NWS weather · static event preview |
+| **Stage** | Intelligence MVP · live NWS weather · static events & airport previews |
 | **Live site** | [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) |
 | **Region** | DC · Northern Virginia · Maryland suburbs |
 | **Repo** | [github.com/jmmmdv/driveradardmv](https://github.com/jmmmdv/driveradardmv) |
@@ -39,7 +39,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 DriveRadarDMV is an early-stage SaaS product for the DC metropolitan area. It aggregates weather, events, traffic patterns, airport activity, and road conditions so drivers can plan smarter shifts—not guess.
 
-**What ships today:** a professional landing page with **live DMV weather intelligence** from the National Weather Service (no API key), an **Events Intelligence preview** with static driver-focused zone cards, plus sample cards for airports and demand zones. No user accounts or payments yet.
+**What ships today:** a professional landing page with **live DMV weather intelligence** from the National Weather Service (no API key), **Events** and **Airport Intelligence previews** with static driver-focused cards, plus a demand-zone sample card. No user accounts or payments yet.
 
 **Try it now:** [https://drive-radar-dmv.vercel.app/](https://drive-radar-dmv.vercel.app/)
 
@@ -79,7 +79,8 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 - [x] Mobile-friendly marketing homepage ([`app/page.jsx`](app/page.jsx))
 - [x] **Live weather intelligence** — NWS API via [`lib/weather.js`](lib/weather.js) (static fallback on failure)
 - [x] **Events intelligence preview** — static zone cards via [`lib/events.js`](lib/events.js)
-- [x] Static preview cards (airports, demand zones)
+- [x] **Airport intelligence preview** — static DCA / IAD / BWI cards via [`lib/airports.js`](lib/airports.js)
+- [x] Static demand-zone preview card
 - [x] Product narrative: problem, features, coverage, roadmap, MVP checklist
 - [x] Next.js 14 App Router with production build support
 - [x] Live Vercel deployment — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
@@ -88,7 +89,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 
 ### Not yet included
 
-- [ ] Live API integrations for events, traffic, and airports (preview uses static demo cards)
+- [ ] Live API integrations for events, traffic, and airports (previews use static demo cards)
 - [ ] User accounts or authentication
 - [ ] Database or persistent storage
 - [ ] Payments or subscriptions
@@ -188,7 +189,7 @@ Listens on port `3000` by default.
 
 | Phase | Focus | Target |
 |---|---|---|
-| **Phase 0** *(now)* | Landing page, live weather, events preview, docs | ✅ Mostly complete |
+| **Phase 0** *(now)* | Landing page, live weather, events & airport previews | ✅ Mostly complete |
 | **Phase 1** | Free/public data + read-only dashboard | Q3 2026 |
 | **Phase 2** | Accounts, saved locations, email alerts | Q4 2026 |
 | **Phase 3** | Premium insights & monetization | 2027 |
@@ -217,7 +218,8 @@ driveradardmv/
 ├── app/
 │   ├── components/
 │   │   ├── WeatherIntelligence.jsx   # Live weather section (server component)
-│   │   └── EventsIntelligence.jsx    # Static events preview section
+│   │   ├── EventsIntelligence.jsx    # Static events preview section
+│   │   └── AirportIntelligence.jsx   # Static airport preview section
 │   ├── globals.css
 │   ├── layout.jsx
 │   └── page.jsx
@@ -229,7 +231,8 @@ driveradardmv/
 │   └── MONETIZATION.md
 ├── lib/
 │   ├── weather.js                    # NWS fetch + driver guidance + fallback
-│   └── events.js                     # Static events preview data
+│   ├── events.js                     # Static events preview data
+│   └── airports.js                   # Static airport preview data
 ├── scripts/
 │   └── capture-screenshots.js
 ├── next.config.mjs
