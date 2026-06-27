@@ -8,7 +8,6 @@
   --line: #d9e3ea;
   --accent: #0f766e;
   --accent-dark: #0b4f4a;
-  --warning: #b45309;
   --shadow: 0 16px 40px rgba(23, 33, 43, 0.08);
 }
 
@@ -33,7 +32,7 @@ body {
 main {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 32px 0 56px;
+  padding: 32px 0 64px;
 }
 
 .hero {
@@ -53,7 +52,7 @@ main {
 }
 
 .heroContent {
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .eyebrow,
@@ -125,33 +124,61 @@ h3 {
   font-weight: 700;
 }
 
-.overview,
-.preview {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 40px;
-  align-items: start;
-  margin-top: 28px;
-  padding: 40px 0;
+.helpSection,
+.features,
+.coverage {
+  padding: 72px 0;
 }
 
-.overview p,
-.preview p,
-.featureCard p {
+.helpSection {
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionHeader {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.sectionIntro {
+  margin: 18px 0 0;
+}
+
+.sectionIntro,
+.helpItem p,
+.featureCard p,
+.coverageIntro p,
+.coverageItem p {
   margin: 0;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
 }
 
-.features {
-  margin-top: 12px;
-  padding: 40px 0;
+.sectionIntro {
+  margin-top: 18px;
 }
 
-.sectionHeader {
-  max-width: 720px;
+.helpGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.helpItem {
+  padding-top: 18px;
+  border-top: 2px solid var(--accent);
+}
+
+.stepNumber {
+  display: block;
   margin-bottom: 24px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.helpItem h3 {
+  font-size: 1.2rem;
 }
 
 .featureGrid {
@@ -161,6 +188,8 @@ h3 {
 }
 
 .featureCard {
+  display: flex;
+  flex-direction: column;
   min-height: 164px;
   padding: 22px;
   border: 1px solid var(--line);
@@ -169,29 +198,76 @@ h3 {
   box-shadow: 0 8px 24px rgba(23, 33, 43, 0.05);
 }
 
-.preview {
+.comingSoon {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.coverage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
   border-top: 1px solid var(--line);
 }
 
-.previewText {
+.coverageIntro {
   max-width: 520px;
 }
 
-.zoneList {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.coverageIntro p {
+  margin-top: 18px;
 }
 
-.zoneList li {
-  padding: 16px 18px;
+.coverageList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.coverageItem {
+  padding: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface-soft);
+}
+
+.coverageItem h3 {
   color: var(--accent-dark);
+}
+
+.siteFooter {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.footerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1120px, calc(100% - 32px));
+  min-height: 96px;
+  margin: 0 auto;
+}
+
+.footerInner a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footerInner a:hover {
+  color: var(--accent);
+}
+
+.footerInner span {
+  color: var(--accent);
+  font-size: 0.82rem;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 @media (max-width: 820px) {
@@ -217,19 +293,28 @@ h3 {
     font-size: 1.05rem;
   }
 
-  .overview,
-  .preview {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 32px 0;
+  .helpSection,
+  .features,
+  .coverage {
+    padding: 52px 0;
   }
 
+  .helpGrid,
   .featureGrid {
     grid-template-columns: 1fr;
   }
 
-  .featureCard {
-    min-height: auto;
+  .helpGrid {
+    gap: 24px;
+  }
+
+  .coverage {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footerInner {
+    width: min(100% - 24px, 680px);
   }
 }
 
@@ -250,5 +335,22 @@ h3 {
   .statusRow span {
     width: 100%;
     justify-content: center;
+  }
+
+  .coverageList {
+    grid-template-columns: 1fr;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 28px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 2.05rem;
   }
 }

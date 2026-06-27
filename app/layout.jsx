@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "DriveRadarDMV | DMV Driving Intelligence",
+  title: "DriveRadarDMV | Driver Intelligence for DC, Maryland, and Virginia",
   description:
-    "DriveRadarDMV is an MVP preview for Washington DC, Maryland, and Virginia drivers."
+    "DriveRadarDMV is a coming-soon driver intelligence platform for Washington, DC, Maryland, and Virginia."
 };
 
 export default function RootLayout({ children }) {
