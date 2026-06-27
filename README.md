@@ -12,7 +12,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 | | |
 |---|---|
-| **Stage** | Daily briefing MVP · live NWS weather · static intelligence previews |
+| **Stage** | Daily briefing MVP · NWS forecast weather (when available) · static intelligence previews |
 | **Live site** | [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) |
 | **Region** | DC · Northern Virginia · Maryland suburbs |
 | **Repo** | [github.com/jmmmdv/driveradardmv](https://github.com/jmmmdv/driveradardmv) |
@@ -39,7 +39,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 DriveRadarDMV is an early-stage SaaS product for the DC metropolitan area. It aggregates weather, events, traffic patterns, airport activity, and road conditions so drivers can plan smarter shifts—not guess.
 
-**What ships today:** a **Daily Driver Briefing** that synthesizes the MVP stack into shift guidance, **live DMV weather intelligence** from the National Weather Service (no API key), plus static **Events**, **Airport**, and **Demand Zones** previews for rideshare, delivery, Uber Black/SUV, and private drivers. No user accounts or payments yet.
+**What ships today:** a **Daily Driver Briefing** that synthesizes the MVP stack into shift guidance, **NWS forecast weather** when the public API is reachable (demo fallback when not — not real-time observations), plus static **Events**, **Airport**, and **Demand Zones** previews for rideshare, delivery, Uber Black/SUV, and private drivers. No user accounts or payments yet.
 
 **Try it now:** [https://drive-radar-dmv.vercel.app/](https://drive-radar-dmv.vercel.app/)
 
@@ -78,7 +78,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 
 - [x] Mobile-friendly marketing homepage ([`app/page.jsx`](app/page.jsx))
 - [x] **Daily driver briefing** — static synthesis via [`lib/dailyBriefing.js`](lib/dailyBriefing.js)
-- [x] **Live weather intelligence** — NWS API via [`lib/weather.js`](lib/weather.js) (static fallback on failure)
+- [x] **NWS forecast weather** — public NWS API via [`lib/weather.js`](lib/weather.js) when available; clearly labeled demo fallback on failure (not real-time observations)
 - [x] **Events intelligence preview** — static zone cards via [`lib/events.js`](lib/events.js)
 - [x] **Airport intelligence preview** — static DCA / IAD / BWI cards via [`lib/airports.js`](lib/airports.js)
 - [x] **Demand zones intelligence preview** — static zone cards via [`lib/demandZones.js`](lib/demandZones.js)
@@ -128,7 +128,7 @@ Details: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | **Hosting** | [Vercel](https://vercel.com/) |
 | **Version control** | Git / GitHub |
 
-Future phases may add TypeScript, a database, and more free/public data APIs — see [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md). Weather uses the free NWS API with no key. No paid APIs or secrets in the current MVP.
+Future phases may add TypeScript, a database, and more free/public data APIs — see [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md). Weather uses the free NWS forecast API with no key; demo fallback when unavailable. No paid APIs or secrets in the current MVP.
 
 ---
 
@@ -193,7 +193,7 @@ Listens on port `3000` by default.
 
 | Phase | Focus | Target |
 |---|---|---|
-| **Phase 0** *(now)* | Daily briefing + live weather + intelligence previews | ✅ Mostly complete |
+| **Phase 0** *(now)* | Daily briefing + NWS forecast weather + intelligence previews | ✅ Mostly complete |
 | **Phase 1** | Free/public data + read-only dashboard | Q3 2026 |
 | **Phase 2** | Accounts, saved locations, email alerts | Q4 2026 |
 | **Phase 3** | Premium insights & monetization | 2027 |

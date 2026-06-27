@@ -318,6 +318,17 @@ main {
   font-size: 0.8rem;
 }
 
+.weatherTrustNote {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
 .intelStatus {
   flex-shrink: 0;
   padding: 4px 10px;
@@ -332,6 +343,11 @@ main {
 .intelStatus--live {
   background: #dcfce7;
   color: #166534;
+}
+
+.intelStatus--forecast {
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 .intelStatus--partial {
@@ -394,6 +410,11 @@ main {
 .intelBadge--live {
   background: var(--accent-soft);
   color: var(--accent-dark);
+}
+
+.intelBadge--forecast {
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 .intelBadge--preview {

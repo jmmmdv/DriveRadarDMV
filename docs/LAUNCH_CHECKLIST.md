@@ -27,7 +27,7 @@ Pre-launch and re-launch checklist for DriveRadarDMV Phase 0 MVP. Use this befor
 | 4 | No `.env`, `.env.local`, or credential files in git (`git status` clean of secrets) | ☐ |
 | 5 | No API keys, tokens, or passwords committed anywhere in the repo | ☐ |
 | 6 | No paid APIs added without explicit approval and documentation | ☐ |
-| 7 | Weather still uses free NWS API only ([`lib/weather.js`](../lib/weather.js)) | ☐ |
+| 7 | Weather uses free NWS **forecast** API only — demo fallback labeled when unavailable ([`lib/weather.js`](../lib/weather.js)) | ☐ |
 | 8 | App runs locally: `npm run dev` → [http://localhost:3000](http://localhost:3000) | ☐ |
 
 **Commands:**
@@ -127,14 +127,15 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 |---|---|---|
 | 1 | Homepage explains **who** it is for (rideshare, delivery, Uber Black/SUV, private, professional DMV drivers) | ☐ |
 | 2 | **Daily Driver Briefing** visible near top of page (after hero) | ☐ |
-| 3 | **Weather** section visible — live NWS or honest fallback label | ☐ |
-| 4 | **Events**, **Airports**, **Demand Zones** sections visible in intelligence stack | ☐ |
-| 5 | Static modules labeled as preview / sample / MVP — not “live prediction” | ☐ |
-| 6 | Global MVP disclaimer visible (intelligence stack or briefing) | ☐ |
-| 7 | Briefing and modules do **not** claim official traffic advice or guaranteed earnings | ☐ |
-| 8 | Waitlist invites early access without promising features or dates | ☐ |
-| 9 | Driver feedback section visible near waitlist; frontend-only note present | ☐ |
-| 10 | Roadmap and MVP status sections align with [MVP_ROADMAP.md](./MVP_ROADMAP.md) | ☐ |
+| 3 | **Weather** section visible — NWS **forecast** or clearly labeled demo fallback; trust disclaimer present | ☐ |
+| 4 | Weather manually verified on production: conditions plausible for DMV; no “Live” label on demo fallback cards | ☐ |
+| 5 | **Events**, **Airports**, **Demand Zones** sections visible in intelligence stack | ☐ |
+| 6 | Static modules labeled as preview / sample / MVP — not “live prediction” | ☐ |
+| 7 | Global MVP disclaimer visible (intelligence stack or briefing) | ☐ |
+| 8 | Briefing and modules do **not** claim official traffic advice or guaranteed earnings | ☐ |
+| 9 | Waitlist invites early access without promising features or dates | ☐ |
+| 10 | Driver feedback section visible near waitlist; frontend-only note present | ☐ |
+| 11 | Roadmap and MVP status sections align with [MVP_ROADMAP.md](./MVP_ROADMAP.md) | ☐ |
 
 ---
 
@@ -178,7 +179,7 @@ See backlog issue: *Run soft launch validation (3–10 drivers)*.
 | # | Check | Done |
 |---|---|---|
 | 1 | Live URL loads from cellular network (not just home Wi‑Fi) | ☐ |
-| 2 | Spot-check weather section — live data or labeled fallback | ☐ |
+| 2 | Spot-check weather section — NWS forecast labels, trust disclaimer, and demo fallback if NWS fails | ☐ |
 | 3 | Watch Vercel deploy dashboard for failed builds after hotfixes | ☐ |
 | 4 | GitHub Issues open for bugs found by early users | ☐ |
 | 5 | If analytics enabled later: confirm privacy plan in [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) before install | ☐ |
@@ -212,7 +213,7 @@ Rate each area **Red / Yellow / Green** before a public launch. Soft launch can 
 | **Technical readiness** | `lint` + `build` pass; Vercel prod green; no secrets in git | ☐ R ☐ Y ☐ G |
 | **Product clarity** | New visitor explains product in one sentence; briefing near top | ☐ R ☐ Y ☐ G |
 | **Design readiness** | Mobile OK; screenshots current or noted pending; OG image planned or shipped | ☐ R ☐ Y ☐ G |
-| **Data readiness** | Weather live or honest fallback; static modules clearly labeled preview | ☐ R ☐ Y ☐ G |
+| **Data readiness** | NWS forecast or honest demo fallback; static modules clearly labeled preview | ☐ R ☐ Y ☐ G |
 | **Monetization readiness** | No payments promised; waitlist honest; [MONETIZATION.md](./MONETIZATION.md) aligned | ☐ R ☐ Y ☐ G |
 | **Validation readiness** | 3+ drivers seen site; disclaimers understood; no misleading claims reported | ☐ R ☐ Y ☐ G |
 
@@ -229,7 +230,8 @@ Hard stops — fix these before sharing widely:
 | **Broken deployment** | Production URL 5xx or blank page destroys trust |
 | **Committed secrets** | Rotate keys; remove from git history if exposed |
 | **Misleading claims** | “Guaranteed earnings”, “official traffic data”, “live surge prediction” when not true |
-| **Fake live data claims** | Static previews must say preview/sample/MVP |
+| **Fake live data claims** | Static previews and demo weather fallback must say preview/sample/demo — never “Live NWS” on fallback |
+| **Unverified weather on production** | Manually confirm NWS forecast loads or demo fallback is clearly labeled before public sharing |
 | **Privacy-invasive tracking** | No hidden analytics, fingerprinting, or driver location tracking without consent and documentation |
 | **`npm run build` fails** | Do not push broken main to production |
 | **Waitlist implies storage** | Form must say frontend-only until backend ships |

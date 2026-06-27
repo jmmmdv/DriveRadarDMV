@@ -72,7 +72,7 @@ const coverageAreas = [
 
 const mvpItems = [
   { label: "Landing page & product story", done: true },
-  { label: "Live weather intelligence (NWS API)", done: true },
+  { label: "NWS forecast weather (demo fallback when unavailable)", done: true },
   { label: "Events intelligence preview (static)", done: true },
   { label: "Airport intelligence preview (static)", done: true },
   { label: "Demand zones intelligence preview (static)", done: true },
@@ -91,7 +91,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Daily briefing", "Live weather (NWS)", "Events, airports & zones", "Product docs"]
+    items: ["Daily briefing", "NWS forecast weather", "Events, airports & zones", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -153,7 +153,7 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Live NWS weather</span>
+              <span>NWS forecast weather</span>
               <span>Static previews</span>
               <span>Not official advice</span>
             </div>
@@ -164,10 +164,11 @@ export default function Home() {
 
         <div className="intelStack">
           <p className="globalMvpNote" role="note">
-            <strong>MVP preview.</strong> Weather may use free NWS public data when
-            available. Events, airports, demand zones, and the daily briefing use
-            static demo content. Not official traffic, weather, safety, financial,
-            or operational advice.
+            <strong>MVP preview.</strong> Weather uses NWS public forecast when
+            available (not real-time observations); demo fallback when NWS is
+            unavailable. Events, airports, demand zones, and the daily briefing
+            use static demo content. Not official traffic, weather, safety,
+            financial, or operational advice.
           </p>
 
           <WeatherIntelligence />
@@ -238,8 +239,9 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                Live NWS weather plus static previews for briefing, events,
-                airports, and demand zones. No accounts or payments yet.
+                NWS forecast weather when available, plus static previews for
+                briefing, events, airports, and demand zones. No accounts or
+                payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">

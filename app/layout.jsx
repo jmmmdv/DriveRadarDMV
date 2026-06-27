@@ -10,7 +10,7 @@ const SITE_URL = "https://drive-radar-dmv.vercel.app/";
 
 const siteTitle = "DriveRadarDMV | DMV Driver Intelligence MVP";
 const siteDescription =
-  "DMV driver intelligence for rideshare, delivery, Uber Black/SUV, private, and professional drivers. MVP preview with live weather, daily briefing, and static intelligence cards — not official traffic advice or earnings guarantees.";
+  "DMV driver intelligence for rideshare, delivery, Uber Black/SUV, private, and professional drivers. MVP preview with NWS forecast weather when available, daily briefing, and static intelligence cards — not official traffic advice or earnings guarantees.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: "DriveRadarDMV | DMV Driver Intelligence MVP",
     description:
-      "Smarter shift planning for DMV drivers — weather, events, airports, and demand zones. MVP preview with live NWS weather; other modules use demo cards.",
+      "Smarter shift planning for DMV drivers — NWS forecast weather when available, events, airports, and demand zones. MVP preview; other modules use demo cards.",
     url: SITE_URL,
     siteName: "DriveRadarDMV",
     locale: "en_US",

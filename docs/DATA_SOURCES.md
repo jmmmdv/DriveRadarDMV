@@ -4,7 +4,7 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
-**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events, airports, and demand zones use **static demo cards** in [`lib/events.js`](../lib/events.js), [`lib/airports.js`](../lib/airports.js), and [`lib/demandZones.js`](../lib/demandZones.js).
+**Current MVP:** **NWS forecast weather** when the public API is reachable via [`lib/weather.js`](../lib/weather.js) — **not real-time observations**. Demo fallback cards when NWS is unavailable. Events, airports, and demand zones use **static demo cards** in [`lib/events.js`](../lib/events.js), [`lib/airports.js`](../lib/airports.js), and [`lib/demandZones.js`](../lib/demandZones.js).
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
 
@@ -12,25 +12,49 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ## Live integrations
 
-### Weather — National Weather Service *(shipped)*
+### Weather — National Weather Service forecast *(shipped with limitations)*
 
 | Item | Detail |
 |---|---|
-| **Source** | [NWS API](https://api.weather.gov/) |
+| **Source** | [NWS API](https://api.weather.gov/) — `/points` + `/forecast` endpoints |
+| **Data type** | **Forecast periods** (e.g. “This Afternoon”) — **not** current observations or radar |
 | **Cost** | Free |
 | **API key** | Not required |
 | **Implementation** | [`lib/weather.js`](../lib/weather.js) + [`app/components/WeatherIntelligence.jsx`](../app/components/WeatherIntelligence.jsx) |
-| **Cache** | 15 minutes (`revalidate: 900`) |
-| **Fallback** | Static sample cards per location if fetch fails |
-| **Locations** | Washington DC, Arlington VA, Dulles / NoVA, Baltimore / BWI |
+| **Cache** | 15 minutes (`revalidate: 900`) on fetch |
+| **Fallback** | Clearly labeled **demo preview** cards per location if NWS fetch fails |
+| **Locations** | Washington DC (`38.9072, -77.0369`), Arlington VA (`38.8816, -77.091`), Dulles / NoVA (`38.9531, -77.4565`), Baltimore / BWI (`39.1754, -76.6684`) |
 
 **Request flow:**
 
-1. `GET https://api.weather.gov/points/{lat},{lon}` with a `User-Agent` header
-2. `GET` the `properties.forecast` URL from the points response
-3. Map the current forecast period to driver impact and suggested action
+1. `GET https://api.weather.gov/points/{lat},{lon}` with a required `User-Agent` header
+2. `GET` the `properties.forecast` URL from the points response (grid-based forecast)
+3. Use the **first forecast period** (`periods[0]`) for condition, temperature, period name, and valid window
+4. Derive cautious driver hints from forecast text — **not official safety advice**
 
-**Not included yet:** hourly forecast, weather alerts banner, historical trends.
+**UI source status labels:**
+
+| Status | Meaning |
+|---|---|
+| **NWS forecast loaded** | All zones returned NWS forecast data |
+| **Mixed · some zones on demo fallback** | Some zones failed; others show NWS forecast |
+| **Demo fallback · NWS unavailable** | NWS unreachable; all zones show sample cards |
+
+**MVP limitations (important):**
+
+- **Not real-time** — shows NWS forecast periods, not live conditions or observations
+- **Build / deploy gaps** — if NWS is unreachable at build or request time, demo fallback is shown with explicit labels
+- **Per-zone failures** — one zone can show NWS forecast while another shows demo fallback
+- **Driver impact text** — algorithmic hints from forecast keywords; verify with official sources before driving
+- **No alerts banner** — NWS weather alerts are not wired yet
+- **15-minute cache** — data may be up to ~15 minutes stale plus forecast period granularity
+- **`fetchedAt` timestamp** — shown only when at least one NWS forecast loaded; means app fetch time, not NWS observation time
+- **Forecast valid window** — from NWS `startTime` / `endTime` when available
+
+**Trust disclaimer (homepage):**  
+“Weather information is MVP-level NWS forecast data when available — not real-time observations. Verify conditions with official weather sources before making driving decisions.”
+
+**Not included yet:** hourly forecast, weather alerts banner, observation stations, historical trends, precipitation probability display.
 
 ---
 
