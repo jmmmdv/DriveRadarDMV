@@ -47,34 +47,17 @@ DriveRadarDMV is an early-stage SaaS product for the DC metropolitan area. It ag
 
 ## Screenshots
 
-Captured from the [live demo](https://drive-radar-dmv.vercel.app/). Regenerate anytime with `npm run screenshots`.
+Captured from the [live demo](https://drive-radar-dmv.vercel.app/).
 
-| File | Description |
-|---|---|
-| [`docs/assets/screenshots/homepage-desktop.png`](docs/assets/screenshots/homepage-desktop.png) | Full homepage — desktop (1280px viewport) |
-| [`docs/assets/screenshots/homepage-mobile.png`](docs/assets/screenshots/homepage-mobile.png) | Full homepage — mobile (iPhone 14 profile) |
-
-### Preview
+### Desktop
 
 ![DriveRadarDMV homepage — desktop](docs/assets/screenshots/homepage-desktop.png)
 
+### Mobile
+
 ![DriveRadarDMV homepage — mobile](docs/assets/screenshots/homepage-mobile.png)
 
-### Regenerate screenshots
-
-```bash
-npm install
-npx playwright install chromium
-npm run screenshots
-```
-
-Uses [Playwright](https://playwright.dev/) to capture full-page PNGs from the live demo into `docs/assets/screenshots/`.
-
-Optional — capture from local dev instead:
-
-```bash
-SCREENSHOT_URL=http://localhost:3000 npm run screenshots
-```
+To regenerate after homepage changes: `npm run screenshots` (see [Local development](#local-development)).
 
 ---
 
