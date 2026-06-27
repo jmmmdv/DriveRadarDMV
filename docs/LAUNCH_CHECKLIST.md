@@ -114,9 +114,10 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 | 1 | No analytics or tracking scripts in the app ([ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) — not installed unless intentionally enabled later) | ☐ |
 | 2 | No cookies banner needed for current MVP (no tracking cookies) | ☐ |
 | 3 | Waitlist form clearly states **frontend-only**; no data stored ([WaitlistForm.jsx](../app/components/WaitlistForm.jsx)) | ☐ |
-| 4 | No collection of driver location, trips, passengers, or PII beyond optional future waitlist backend | ☐ |
-| 5 | No `.env` files committed; no secrets in client-side code | ☐ |
-| 6 | Product does not impersonate Uber, Lyft, government, or law enforcement | ☐ |
+| 4 | Driver feedback form clearly states **frontend-only**; no feedback stored ([DriverFeedbackForm.jsx](../app/components/DriverFeedbackForm.jsx)) | ☐ |
+| 5 | No collection of driver location, trips, passengers, or PII beyond optional future waitlist/feedback backend | ☐ |
+| 6 | No `.env` files committed; no secrets in client-side code | ☐ |
+| 7 | Product does not impersonate Uber, Lyft, government, or law enforcement | ☐ |
 
 ---
 
@@ -132,7 +133,8 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 | 6 | Global MVP disclaimer visible (intelligence stack or briefing) | ☐ |
 | 7 | Briefing and modules do **not** claim official traffic advice or guaranteed earnings | ☐ |
 | 8 | Waitlist invites early access without promising features or dates | ☐ |
-| 9 | Roadmap and MVP status sections align with [MVP_ROADMAP.md](./MVP_ROADMAP.md) | ☐ |
+| 9 | Driver feedback section visible near waitlist; frontend-only note present | ☐ |
+| 10 | Roadmap and MVP status sections align with [MVP_ROADMAP.md](./MVP_ROADMAP.md) | ☐ |
 
 ---
 
@@ -143,7 +145,7 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 | 1 | Homepage reviewed on a real phone (or DevTools mobile viewport) | ☐ |
 | 2 | Navigation / in-page anchors work (Briefing, Weather, Events, Airports, Zones) | ☐ |
 | 3 | Text readable without horizontal scroll | ☐ |
-| 4 | Buttons and waitlist form usable on touch (44px-ish tap targets) | ☐ |
+| 4 | Buttons, waitlist, and feedback forms usable on touch (44px-ish tap targets) | ☐ |
 | 5 | Intelligence cards stack cleanly on narrow screens | ☐ |
 | 6 | Footer links tappable (live demo, GitHub, domain) | ☐ |
 | 7 | Compare to `docs/assets/screenshots/homepage-mobile.png` if screenshots were refreshed | ☐ |
@@ -159,7 +161,8 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 | 3 | Asked: “Would you check this before a shift?” — note objections | ☐ |
 | 4 | Daily briefing read as useful or confusing — capture quotes | ☐ |
 | 5 | Waitlist UI understood as not connected yet | ☐ |
-| 6 | Feedback logged in issues, notes, or [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) | ☐ |
+| 6 | Feedback UI understood as not connected yet | ☐ |
+| 7 | Feedback logged in issues, notes, or [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) | ☐ |
 
 See backlog issue: *Run driver interview script (5–10 drivers)*.
 

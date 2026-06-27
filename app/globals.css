@@ -1039,7 +1039,8 @@ main {
 }
 
 .waitlistField input,
-.waitlistField select {
+.waitlistField select,
+.waitlistField textarea {
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
@@ -1051,8 +1052,65 @@ main {
   font-size: 0.92rem;
 }
 
+.waitlistField textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.waitlistFields--feedback {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.waitlistField--full {
+  grid-column: 1 / -1;
+}
+
+.waitlistRadioFieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.waitlistRadioFieldset legend {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.waitlistRadioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.waitlistRadioOption {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+
+.waitlistRadioOption:has(input:checked) {
+  border-color: var(--accent);
+  background: #ecfdf5;
+}
+
+.waitlistRadioOption input {
+  accent-color: var(--accent-dark);
+}
+
 .waitlistField input:focus,
-.waitlistField select:focus {
+.waitlistField select:focus,
+.waitlistField textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
   border-color: var(--accent);

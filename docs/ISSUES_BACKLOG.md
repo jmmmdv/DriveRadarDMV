@@ -237,7 +237,7 @@ Create a pre-launch / re-launch checklist covering build, deploy, docs, disclaim
 - [x] [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md) — technical, GitHub, Vercel, domain, SEO, privacy, copy, mobile, driver validation, post-launch, 7-day plan
 - [x] Launch readiness scorecard (technical, product, design, data, monetization, validation)
 - [x] “Do not launch until” blockers documented
-- [x] Checklist includes: `npm run build`, `npm run lint`, clean git, Vercel deploy, README links, screenshots, no `.env`/secrets, no paid APIs, waitlist frontend-only, MVP labels, analytics not installed unless intentional
+- [x] Checklist includes: `npm run build`, `npm run lint`, clean git, Vercel deploy, README links, screenshots, no `.env`/secrets, no paid APIs, waitlist and feedback frontend-only, MVP labels, analytics not installed unless intentional
 - [x] Linked from README documentation table
 - [ ] Team runs full checklist before next **public** launch announcement *(manual)*
 
@@ -474,20 +474,52 @@ Do not ship until Phase 2 auth/storage decisions are made.
 |---|---|
 | **Priority** | Medium |
 | **Type** | Feature |
+| **Status** | **UI preview shipped** — backend integration remains |
 
 **Description**  
-Lightweight feedback form: “Was this briefing useful?” plus optional free text. Supports product validation interviews at scale.
+Lightweight feedback form for product validation: driver type, driving area, most useful feature, gaps, and weekly use intent.
+
+**Shipped (Phase 0 preview)**
+
+- [x] Homepage feedback section near waitlist ([`app/components/DriverFeedbackForm.jsx`](../../app/components/DriverFeedbackForm.jsx))
+- [x] Fields: driver type, main driving area, most useful feature, what is missing, weekly use (Yes / Maybe / No)
+- [x] Frontend-only success message — no API, no storage, no env vars
+- [x] MVP disclaimer: “Frontend-only MVP preview. No feedback is stored yet.”
+
+**Acceptance criteria (backend — future)**
+
+- [ ] Submissions persist via shared validation backend or database (with waitlist)
+- [ ] Optional export or dashboard for product review
+- [ ] Privacy note on how feedback is used
+- [ ] No secrets in git; env vars documented in README setup only if needed
+
+**Notes**  
+Pair with driver interviews for qualitative depth. See **Connect validation forms to storage** below.
+
+---
+
+### Issue: Connect validation forms to storage (waitlist + feedback)
+
+| Field | Value |
+|---|---|
+| **Priority** | High |
+| **Type** | Engineering |
+| **Depends on** | Waitlist UI preview (shipped), Driver feedback UI preview (shipped) |
+
+**Description**  
+Wire homepage waitlist and driver feedback forms to a free-tier-friendly backend (Formspree, Supabase, Airtable, Google Sheets API, etc.) so sign-ups and feedback are stored securely.
 
 **Acceptance criteria**
 
-- [ ] One-click useful / not useful OR short survey embed
-- [ ] Optional comment field
-- [ ] Linked from briefing footer or MVP section
-- [ ] Submissions stored or forwarded without exposing secrets in git
-- [ ] Feedback counted manually or via dashboard (document process)
+- [ ] Waitlist submissions persist in production
+- [ ] Feedback submissions persist in production (same or separate endpoint)
+- [ ] No secrets in repo; env vars documented in README setup only
+- [ ] Graceful error states if backend unavailable
+- [ ] Privacy policy draft linked from both form sections
+- [ ] Forms updated to remove “frontend-only” copy once backend is live
 
 **Notes**  
-Can ship as Google Form initially for zero backend work.
+Do not ship until Phase 2 storage decisions are made. Consider one shared “validation” table with form type discriminator.
 
 ---
 
@@ -741,6 +773,7 @@ Quick reference — **full checklist:** [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST
 - [ ] Daily briefing near top; Weather / Events / Airports / Zones visible
 - [ ] Global MVP disclaimer visible; static modules labeled preview
 - [ ] Waitlist marked frontend-only (no storage)
+- [ ] Driver feedback marked frontend-only (no storage)
 - [ ] No analytics/tracking unless intentionally enabled per ANALYTICS_PLAN.md
 - [ ] README live demo link correct; doc links work
 - [ ] Screenshots refreshed or marked pending in README

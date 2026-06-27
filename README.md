@@ -83,6 +83,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 - [x] **Airport intelligence preview** — static DCA / IAD / BWI cards via [`lib/airports.js`](lib/airports.js)
 - [x] **Demand zones intelligence preview** — static zone cards via [`lib/demandZones.js`](lib/demandZones.js)
 - [x] **Waitlist form UI** — frontend-only preview via [`app/components/WaitlistForm.jsx`](app/components/WaitlistForm.jsx) (no storage yet)
+- [x] **Driver feedback form UI** — frontend-only preview via [`app/components/DriverFeedbackForm.jsx`](app/components/DriverFeedbackForm.jsx) (no storage yet)
 - [x] Product narrative: problem, features, coverage, roadmap, MVP checklist
 - [x] Next.js 14 App Router with production build support
 - [x] Live Vercel deployment — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
@@ -92,7 +93,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 ### Not yet included
 
 - [ ] Live API integrations for events, traffic, airports, and demand (previews use static demo cards)
-- [ ] Waitlist backend (form submissions are UI-only; no email provider or database yet)
+- [ ] Waitlist and feedback backends (submissions are UI-only; no email provider or database yet)
 - [ ] User accounts or authentication
 - [ ] Database or persistent storage
 - [ ] Payments or subscriptions
@@ -230,7 +231,9 @@ driveradardmv/
 │   │   ├── WeatherIntelligence.jsx   # Live weather section (server component)
 │   │   ├── EventsIntelligence.jsx    # Static events preview section
 │   │   ├── AirportIntelligence.jsx   # Static airport preview section
-│   │   └── DemandZones.jsx           # Static demand zones preview section
+│   │   ├── DemandZones.jsx           # Static demand zones preview section
+│   │   ├── WaitlistForm.jsx          # Waitlist UI (frontend-only preview)
+│   │   └── DriverFeedbackForm.jsx    # Driver feedback UI (frontend-only preview)
 │   ├── globals.css
 │   ├── layout.jsx
 │   └── page.jsx

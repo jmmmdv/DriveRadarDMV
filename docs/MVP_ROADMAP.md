@@ -40,6 +40,7 @@ The **Daily Driver Briefing** is the decision layer that combines Weather, Event
 - [x] Demand zones intelligence preview (static zone cards)
 - [x] Daily driver briefing (static synthesis of all modules)
 - [x] Waitlist form UI (frontend-only preview — validation step before backend)
+- [x] Driver feedback form UI (frontend-only preview — validation step before backend)
 - [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
 - [ ] Custom domain (`driveradardmv.com`) — plan in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md)
 - [ ] Basic analytics (privacy-friendly — see [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md); plan done, not enabled)
@@ -58,8 +59,10 @@ Early product validation before accounts, email digests, or payments:
 | Step | Status | Notes |
 |---|---|---|
 | Waitlist UI on homepage | **Shipped** | Name, email, driver type — frontend-only; no data stored |
+| Driver feedback UI on homepage | **Shipped** | Driver type, area, useful feature, gaps, weekly use — frontend-only; no data stored |
 | Waitlist backend / storage | Planned | Phase 2 — free-tier form backend or database; env vars documented, never committed |
-| Driver feedback (“Was this useful?”) | Planned | Phase 3 backlog — see [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) |
+| Feedback backend / storage | Planned | Phase 2 — same stack as waitlist or shared validation endpoint; no secrets in repo |
+| Driver interviews (qualitative) | Planned | Complement form UI — see [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) |
 
 ---
 

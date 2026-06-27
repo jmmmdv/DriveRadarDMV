@@ -4,6 +4,7 @@ import AirportIntelligence from "./components/AirportIntelligence";
 import DemandZones from "./components/DemandZones";
 import DailyBriefing from "./components/DailyBriefing";
 import WaitlistForm from "./components/WaitlistForm";
+import DriverFeedbackForm from "./components/DriverFeedbackForm";
 
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
@@ -77,6 +78,7 @@ const mvpItems = [
   { label: "Demand zones intelligence preview (static)", done: true },
   { label: "Daily driver briefing (static synthesis)", done: true },
   { label: "Waitlist form UI (frontend-only preview)", done: true },
+  { label: "Driver feedback form UI (frontend-only preview)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
   { label: "Live API feeds (events, traffic, airports, demand)", done: false },
@@ -280,6 +282,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <DriverFeedbackForm />
 
         <WaitlistForm />
 
