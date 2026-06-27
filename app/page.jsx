@@ -2,6 +2,7 @@ import WeatherIntelligence from "./components/WeatherIntelligence";
 import EventsIntelligence from "./components/EventsIntelligence";
 import AirportIntelligence from "./components/AirportIntelligence";
 import DemandZones from "./components/DemandZones";
+import DailyBriefing from "./components/DailyBriefing";
 
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
@@ -73,6 +74,7 @@ const mvpItems = [
   { label: "Events intelligence preview (static)", done: true },
   { label: "Airport intelligence preview (static)", done: true },
   { label: "Demand zones intelligence preview (static)", done: true },
+  { label: "Daily driver briefing (static synthesis)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
   { label: "Live API feeds (events, traffic, airports, demand)", done: false },
@@ -85,7 +87,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Landing page", "Live weather (NWS)", "Events, airports & zones preview", "Product docs"]
+    items: ["Daily briefing", "Live weather (NWS)", "Events, airports & zones", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -116,6 +118,7 @@ export default function Home() {
             DriveRadar<span>DMV</span>
           </a>
           <nav className="headerNav" aria-label="Primary">
+            <a href="#briefing">Briefing</a>
             <a href="#weather">Weather</a>
             <a href="#events">Events</a>
             <a href="#airports">Airports</a>
@@ -148,12 +151,14 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Full preview MVP</span>
+              <span>Daily briefing MVP</span>
               <span>Live NWS weather</span>
-              <span>Static zone previews</span>
+              <span>Static intelligence previews</span>
             </div>
           </div>
         </section>
+
+        <DailyBriefing />
 
         <section className="problemSection" aria-labelledby="problem-title">
           <div className="sectionHeader centered">
@@ -227,9 +232,9 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                This MVP includes live weather from the National Weather Service
-                plus static previews for events, airports, and demand zones — no
-                accounts or payments yet.
+                This MVP includes a daily driver briefing, live weather from the
+                National Weather Service, and static previews for events, airports,
+                and demand zones — no accounts or payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -303,7 +308,7 @@ export default function Home() {
             <a href={REPO_URL}>GitHub</a>
             <a href="https://www.driveradardmv.com">driveradardmv.com</a>
           </div>
-          <span className="footerBadge">Full preview MVP</span>
+          <span className="footerBadge">Daily briefing MVP</span>
         </div>
       </footer>
     </>

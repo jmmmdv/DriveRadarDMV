@@ -2,7 +2,7 @@
 
 Phased delivery plan for DriveRadarDMV. Each phase has a clear exit criteria so the team can ship incrementally without over-building.
 
-**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** Weather live (NWS) · Events, airports & demand zones static preview
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** Daily briefing + live weather · static intelligence previews
 
 **Last updated:** June 2026
 
@@ -12,10 +12,12 @@ Phased delivery plan for DriveRadarDMV. Each phase has a clear exit criteria so 
 
 ```
 Phase 0 ──► Phase 1 ──► Phase 2 ──► Phase 3
-Landing     Live data    Accounts     Premium
-& docs      dashboard    & alerts     & scale
+Briefing    Live data    Accounts     Premium
++ modules   dashboard    & alerts     & scale
  (now)      (Q3 2026)    (Q4 2026)    (2027)
 ```
+
+The **Daily Driver Briefing** is the decision layer that combines Weather, Events, Airports, and Demand Zones into one shift summary. Phase 0 ships a static demo; later phases auto-compose from live and personalized data.
 
 ---
 
@@ -34,6 +36,7 @@ Landing     Live data    Accounts     Premium
 - [x] Events intelligence preview (static zone cards)
 - [x] Airport intelligence preview (static DCA / IAD / BWI cards)
 - [x] Demand zones intelligence preview (static zone cards)
+- [x] Daily driver briefing (static synthesis of all modules)
 - [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
 - [ ] Custom domain (`www.driveradardmv.com`)
 - [ ] Basic analytics (privacy-friendly, e.g. Vercel Analytics)
@@ -56,6 +59,7 @@ Landing     Live data    Accounts     Premium
 
 | Feature | Priority | Notes |
 |---|---|---|
+| Daily driver briefing | P0 | ✅ Static synthesis shipped; auto-compose from live modules in Phase 1 |
 | Regional weather summary | P0 | ✅ Shipped on homepage via NWS |
 | Today's notable events | P0 | Static preview shipped; live feeds + seed list next |
 | Airport day overview | P1 | Static preview shipped (DCA, IAD, BWI); live FAA summaries next |

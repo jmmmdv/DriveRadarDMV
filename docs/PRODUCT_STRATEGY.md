@@ -2,7 +2,21 @@
 
 DriveRadarDMV is a regional driver-intelligence product for the Washington, DC metropolitan area (DMV). This document defines the problem, audience, positioning, and success criteria for the early MVP.
 
-**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** static MVP (sample data only, no live APIs)
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** Daily briefing + live weather · static intelligence previews
+
+---
+
+## Daily Driver Briefing — the decision layer
+
+The **Daily Driver Briefing** is the first product-level layer that turns separate intelligence modules into one shift-oriented summary. It answers: *Should I drive today, where should I watch, and what should I do first?*
+
+| Phase | Briefing behavior |
+|---|---|
+| **Phase 0** *(now)* | Static demo synthesis in [`lib/dailyBriefing.js`](../lib/dailyBriefing.js) — combines narrative guidance for weather, events, airports, and demand zones |
+| **Phase 1** | Auto-compose from live NWS weather + static/seed event and airport context |
+| **Phase 2** | Personalized briefing (saved zones, driver type, email digest) |
+
+The briefing is **not** financial, safety, or official traffic advice. It is a driver decision aid built on top of the modules below.
 
 ---
 
