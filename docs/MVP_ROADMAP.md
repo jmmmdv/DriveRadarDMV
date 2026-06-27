@@ -30,7 +30,7 @@ Landing     Live data    Accounts     Premium
 - [x] Responsive homepage with product story
 - [x] README and product documentation (`docs/`)
 - [x] Production deploy on Vercel — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
-- [ ] Homepage screenshots in `docs/assets/screenshots/` (see [README § Screenshots](../README.md#screenshots))
+- [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
 - [ ] Custom domain (`www.driveradardmv.com`)
 - [ ] Basic analytics (privacy-friendly, e.g. Vercel Analytics)
 

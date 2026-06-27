@@ -47,31 +47,34 @@ DriveRadarDMV is an early-stage SaaS product for the DC metropolitan area. It ag
 
 ## Screenshots
 
-Screenshots are not checked into the repo yet. After capture, save them here:
+Captured from the [live demo](https://drive-radar-dmv.vercel.app/). Regenerate anytime with `npm run screenshots`.
 
 | File | Description |
 |---|---|
-| `docs/assets/screenshots/homepage-desktop.png` | Full homepage — desktop (1280px+ wide) |
-| `docs/assets/screenshots/homepage-mobile.png` | Full homepage — mobile (390px wide) |
+| [`docs/assets/screenshots/homepage-desktop.png`](docs/assets/screenshots/homepage-desktop.png) | Full homepage — desktop (1280px viewport) |
+| [`docs/assets/screenshots/homepage-mobile.png`](docs/assets/screenshots/homepage-mobile.png) | Full homepage — mobile (iPhone 14 profile) |
 
-### Preview *(placeholders — images coming soon)*
+### Preview
 
-<!-- Uncomment after adding screenshot files:
 ![DriveRadarDMV homepage — desktop](docs/assets/screenshots/homepage-desktop.png)
+
 ![DriveRadarDMV homepage — mobile](docs/assets/screenshots/homepage-mobile.png)
--->
 
-| Desktop | Mobile |
-|---|---|
-| *`homepage-desktop.png` — capture after deploy* | *`homepage-mobile.png` — capture after deploy* |
+### Regenerate screenshots
 
-**How to capture**
+```bash
+npm install
+npx playwright install chromium
+npm run screenshots
+```
 
-1. Open [https://drive-radar-dmv.vercel.app/](https://drive-radar-dmv.vercel.app/)
-2. **Desktop:** resize browser to ~1280px width → screenshot full page
-3. **Mobile:** use DevTools device mode (e.g. iPhone 14, 390×844) → screenshot full page
-4. Save files to `docs/assets/screenshots/` using the names above
-5. Uncomment the markdown image lines in this section and commit
+Uses [Playwright](https://playwright.dev/) to capture full-page PNGs from the live demo into `docs/assets/screenshots/`.
+
+Optional — capture from local dev instead:
+
+```bash
+SCREENSHOT_URL=http://localhost:3000 npm run screenshots
+```
 
 ---
 
@@ -104,7 +107,7 @@ Screenshots are not checked into the repo yet. After capture, save them here:
 - [ ] Database or persistent storage
 - [ ] Payments or subscriptions
 - [ ] Real-time dashboards or alerts
-- [ ] README screenshots (manual capture — see [Screenshots](#screenshots))
+- [x] README screenshots ([`docs/assets/screenshots/`](docs/assets/screenshots/))
 
 ---
 
@@ -160,10 +163,11 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Scripts
 
 ```bash
-npm run dev     # Development server
-npm run build   # Production build
-npm run start   # Serve production build
-npm run lint    # ESLint
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Serve production build
+npm run lint         # ESLint
+npm run screenshots  # Capture README screenshots (dev only)
 ```
 
 No environment variables or API keys are required.
@@ -230,11 +234,13 @@ driveradardmv/
 │   ├── layout.jsx       # Root layout & metadata
 │   └── page.jsx         # Homepage (static MVP)
 ├── docs/
-│   ├── assets/screenshots/   # README screenshots (add manually)
+│   ├── assets/screenshots/   # README screenshots (npm run screenshots)
 │   ├── PRODUCT_STRATEGY.md
 │   ├── MVP_ROADMAP.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
+├── scripts/
+│   └── capture-screenshots.js
 ├── next.config.mjs
 ├── package.json
 └── README.md
