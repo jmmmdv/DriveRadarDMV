@@ -227,21 +227,22 @@ Domain purchase and DNS changes are manual — no secrets in repo. Vercel URL re
 |---|---|
 | **Priority** | High |
 | **Type** | Documentation |
+| **Status** | **Shipped** — see [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md) |
 
 **Description**  
 Create a pre-launch / re-launch checklist covering build, deploy, docs, disclaimers, and smoke tests.
 
 **Acceptance criteria**
 
-- [ ] Checklist includes: `npm run build`, `npm run lint`, Vercel deploy green, live demo loads
-- [ ] MVP disclaimer visible on homepage (global note + briefing)
-- [ ] README live demo URL correct
-- [ ] Screenshots current or explicitly marked pending
-- [ ] No `.env` or secrets committed
-- [ ] Checklist lives in this file or linked subsection below
+- [x] [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md) — technical, GitHub, Vercel, domain, SEO, privacy, copy, mobile, driver validation, post-launch, 7-day plan
+- [x] Launch readiness scorecard (technical, product, design, data, monetization, validation)
+- [x] “Do not launch until” blockers documented
+- [x] Checklist includes: `npm run build`, `npm run lint`, clean git, Vercel deploy, README links, screenshots, no `.env`/secrets, no paid APIs, waitlist frontend-only, MVP labels, analytics not installed unless intentional
+- [x] Linked from README documentation table
+- [ ] Team runs full checklist before next **public** launch announcement *(manual)*
 
 **Notes**  
-See [Launch checklist (summary)](#launch-checklist-summary) at bottom of this document.
+Quick summary remains below; full checklist is the canonical doc.
 
 ---
 
@@ -732,24 +733,27 @@ Explicitly out of scope for near term per PRODUCT_STRATEGY.
 
 ## Launch checklist (summary)
 
-Quick reference for Phase 1 launches. Expand in a dedicated doc if needed.
+Quick reference — **full checklist:** [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)
 
 - [ ] `npm run lint` and `npm run build` pass locally
 - [ ] Vercel production deploy successful
 - [ ] [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) loads on mobile and desktop
-- [ ] Global MVP disclaimer visible
-- [ ] Weather shows live NWS or honest fallback label
-- [ ] Static modules labeled “Sample preview”
-- [ ] README live demo link correct
+- [ ] Daily briefing near top; Weather / Events / Airports / Zones visible
+- [ ] Global MVP disclaimer visible; static modules labeled preview
+- [ ] Waitlist marked frontend-only (no storage)
+- [ ] No analytics/tracking unless intentionally enabled per ANALYTICS_PLAN.md
+- [ ] README live demo link correct; doc links work
 - [ ] Screenshots refreshed or marked pending in README
-- [ ] No secrets or `.env` in git
-- [ ] docs/MVP_ROADMAP.md and this backlog reflect current stage
+- [ ] No secrets or `.env` in git; no paid APIs added
+- [ ] Custom domain verified when ready (CUSTOM_DOMAIN_SETUP.md)
+- [ ] Scorecard reviewed before public launch (LAUNCH_CHECKLIST.md)
 
 ---
 
 ## Related documents
 
 - [README](../README.md)
+- [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md)
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md)
 - [DATA_SOURCES.md](./DATA_SOURCES.md)
