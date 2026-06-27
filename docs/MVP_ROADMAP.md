@@ -19,6 +19,8 @@ Briefing    Live data    Accounts     Premium
 
 The **Daily Driver Briefing** is the decision layer that combines Weather, Events, Airports, and Demand Zones into one shift summary. Phase 0 ships a static demo; later phases auto-compose from live and personalized data.
 
+**Detailed issue planning:** [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) — GitHub-style backlog for Phases 1–5 (MVP hardening through scale).
+
 ---
 
 ## Phase 0 — Foundation & narrative MVP
@@ -169,12 +171,14 @@ Ideas not committed to a phase:
 2. **Ship Phase 1 with fewer features** rather than delaying for perfection.
 3. **Revisit quarterly** — dates are targets, not contracts.
 4. **Link PRs to phase items** — e.g. `Phase 1: weather card` in PR title.
+5. **Track execution** — create GitHub issues from [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md).
 
 ---
 
 ## Related documents
 
 - [README](../README.md) — Project overview, setup, screenshots, and live demo
+- [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) — Detailed issue backlog (Phases 1–5)
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md)
 - [DATA_SOURCES.md](./DATA_SOURCES.md)
 - [MONETIZATION.md](./MONETIZATION.md)
