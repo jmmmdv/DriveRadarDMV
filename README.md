@@ -6,8 +6,8 @@ DriveRadarDMV helps DMV-area drivers understand local conditions, demand signals
 
 | | |
 |---|---|
-| **Status** | Early MVP · Coming Soon |
-| **Live demo** | [www.driveradardmv.com](https://www.driveradardmv.com) *(placeholder — deploy pending)* |
+| **Status** | Static MVP · Sample data only · No live APIs yet |
+| **Live demo** | [**drive-radar-dmv.vercel.app**](https://drive-radar-dmv.vercel.app/) |
 | **Region** | DC · Northern Virginia · Maryland suburbs |
 
 ---
@@ -36,9 +36,10 @@ The current repository ships a **static MVP preview**: a professional landing pa
 What exists today:
 
 - [x] Mobile-friendly marketing homepage (`app/page.jsx`)
-- [x] Product narrative: how it helps drivers, planned features, coverage map
+- [x] Static intelligence preview cards (weather, events, airports, demand zones)
+- [x] Product narrative: problem, features, coverage, roadmap, and MVP status
 - [x] Next.js 14 App Router scaffold with production build support
-- [x] Vercel-ready deployment (zero env vars required for this preview)
+- [x] Live Vercel deployment — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
 What is **not** included yet:
 
@@ -148,7 +149,7 @@ The app listens on port `3000` by default.
 
 | Phase | Focus | Target |
 |---|---|---|
-| **Phase 0** *(now)* | Landing page & product docs | ✅ In progress |
+| **Phase 0** *(now)* | Landing page, static demo cards & product docs | ✅ In progress |
 | **Phase 1** | Free/public data sources + read-only dashboard | Q3 2026 |
 | **Phase 2** | Accounts, saved locations, email alerts | Q4 2026 |
 | **Phase 3** | Premium insights & monetization | 2027 |
@@ -159,12 +160,12 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 
 ## Live demo
 
-> **Placeholder** — update this link after your first Vercel deploy.
-
 | Environment | URL |
 |---|---|
-| Production | [https://www.driveradardmv.com](https://www.driveradardmv.com) |
-| Staging | *Add Vercel preview URL here* |
+| **Production (Vercel)** | [**https://drive-radar-dmv.vercel.app/**](https://drive-radar-dmv.vercel.app/) |
+| Custom domain *(planned)* | [www.driveradardmv.com](https://www.driveradardmv.com) |
+
+The live site is a **static MVP** with sample intelligence cards. No live API data is connected yet.
 
 ---
 
@@ -175,7 +176,7 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | View | Preview |
 |---|---|
 | Homepage hero | *Add `homepage-hero.png`* |
-| Planned features | *Add `features-grid.png`* |
+| Intelligence preview cards | *Add `preview-cards.png`* |
 | Mobile layout | *Add `mobile-home.png`* |
 
 Example markdown once images exist:
@@ -225,4 +226,4 @@ Private / all rights reserved unless a license file is added later.
 
 ---
 
-**DriveRadarDMV** · [www.driveradardmv.com](https://www.driveradardmv.com) · Built for DMV drivers
+**DriveRadarDMV** · [Live demo](https://drive-radar-dmv.vercel.app/) · [GitHub](https://github.com/jmmmdv/driveradardmv) · Built for DMV drivers
