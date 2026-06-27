@@ -15,37 +15,29 @@ export default function DailyBriefing() {
       <div className="briefingPanel">
         <div className="briefingHeader">
           <div>
-            <p className="sectionLabel">Decision layer</p>
+            <p className="sectionLabel">Today&apos;s summary</p>
             <h2 id="briefing-title">Daily Driver Briefing</h2>
-            <p className="briefingDate">{briefing.dateLabel} · DMV preview</p>
+            <p className="briefingDate">{briefing.dateLabel}</p>
           </div>
-          <span className="briefingSourceBadge">MVP preview</span>
-        </div>
-
-        <p className="briefingIntro">
-          One practical summary built from the Weather, Events, Airport, and
-          Demand Zones modules below — designed for rideshare, delivery, Uber
-          Black/SUV, private, and professional drivers planning a shift.
-        </p>
-
-        <div className="briefingDisclaimer" role="note">
-          <strong>Not financial, safety, or official traffic advice.</strong>{" "}
-          {briefing.attribution}. Always use your own judgment and official
-          sources before driving.
+          <span className="intelStatus intelStatus--preview">Static preview</span>
         </div>
 
         <div className="briefingGrid">
           {BRIEFING_ITEMS.map((item) => {
             const value = briefing[item.key];
+            const isStrategy = item.key === "suggestedStrategy";
 
             return (
-              <article className="briefingCard" key={item.key}>
-                <div className="briefingCardHead">
+              <article
+                className={`briefingCard${isStrategy ? " briefingCard--highlight" : ""}`}
+                key={item.key}
+              >
+                <h3>
                   <span className="briefingIcon" aria-hidden="true">
                     {item.icon}
                   </span>
-                  <h3>{item.label}</h3>
-                </div>
+                  {item.label}
+                </h3>
 
                 {Array.isArray(value) ? (
                   <ul className="briefingList">
@@ -60,12 +52,6 @@ export default function DailyBriefing() {
             );
           })}
         </div>
-
-        <p className="briefingFooter">
-          Static demo synthesis for Phase 0. Future versions will compose this
-          briefing automatically from live weather and connected public data
-          feeds.
-        </p>
       </div>
     </section>
   );

@@ -123,7 +123,6 @@ export default function Home() {
             <a href="#events">Events</a>
             <a href="#airports">Airports</a>
             <a href="#zones">Zones</a>
-            <a href="#features">Features</a>
             <a href="#roadmap">Roadmap</a>
             <a className="navCta" href={LIVE_DEMO_URL}>
               Live demo
@@ -135,39 +134,51 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="heroContent">
-            <p className="eyebrow">DMV driver intelligence · Full preview MVP</p>
+            <p className="eyebrow">DMV driver intelligence</p>
             <h1>Drive smarter across DC, Maryland &amp; Virginia</h1>
             <p className="heroText">
-              One regional view for weather, events, airport activity, and demand
-              zones — built for rideshare, delivery, Uber Black/SUV, private, and
-              professional drivers who need clarity before every shift.
+              Weather, events, airports, and demand zones in one regional briefing
+              for rideshare, delivery, Uber Black/SUV, and private drivers.
             </p>
             <div className="heroActions">
-              <a className="btn btnPrimary" href={LIVE_DEMO_URL}>
-                View live demo
+              <a className="btn btnPrimary" href="#briefing">
+                View today&apos;s briefing
               </a>
-              <a className="btn btnSecondary" href={`${REPO_URL}#readme`}>
-                Read on GitHub
+              <a className="btn btnSecondary" href={LIVE_DEMO_URL}>
+                Live demo
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Daily briefing MVP</span>
               <span>Live NWS weather</span>
-              <span>Static intelligence previews</span>
+              <span>Static previews</span>
+              <span>Not official advice</span>
             </div>
           </div>
         </section>
 
         <DailyBriefing />
 
+        <div className="intelStack">
+          <p className="globalMvpNote" role="note">
+            <strong>MVP preview.</strong> Weather may use free NWS public data when
+            available. Events, airports, demand zones, and the daily briefing use
+            static demo content. Not official traffic, weather, safety, financial,
+            or operational advice.
+          </p>
+
+          <WeatherIntelligence />
+          <EventsIntelligence />
+          <AirportIntelligence />
+          <DemandZones />
+        </div>
+
         <section className="problemSection" aria-labelledby="problem-title">
           <div className="sectionHeader centered">
             <p className="sectionLabel">The problem</p>
-            <h2 id="problem-title">Drivers shouldn&apos;t guess before a shift</h2>
+            <h2 id="problem-title">One briefing instead of five apps</h2>
             <p className="sectionIntro">
-              DMV drivers make hourly decisions with fragmented tools. DriveRadarDMV
-              brings regional signals into one daily briefing — so you can plan
-              where and when to drive with more confidence.
+              DMV drivers juggle weather, events, traffic, and airport tools that
+              were not built for gig work. DriveRadarDMV combines them into one scan.
             </p>
           </div>
           <div className="problemGrid">
@@ -180,21 +191,12 @@ export default function Home() {
           </div>
         </section>
 
-        <WeatherIntelligence />
-
-        <EventsIntelligence />
-
-        <AirportIntelligence />
-
-        <DemandZones />
-
         <section className="features" id="features" aria-labelledby="features-title">
           <div className="sectionHeader">
             <p className="sectionLabel">Driver intelligence</p>
             <h2 id="features-title">Everything that shapes a DMV shift</h2>
             <p className="sectionIntro">
-              Planned modules that turn regional noise into actionable driving
-              context — starting with the factors drivers check most often.
+              Module overview — detail in each intelligence section above.
             </p>
           </div>
           <div className="featureGrid">
@@ -232,9 +234,8 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                This MVP includes a daily driver briefing, live weather from the
-                National Weather Service, and static previews for events, airports,
-                and demand zones — no accounts or payments yet.
+                Live NWS weather plus static previews for briefing, events,
+                airports, and demand zones. No accounts or payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -282,8 +283,7 @@ export default function Home() {
           <div className="ctaPanel">
             <h2 id="cta-title">See the MVP live</h2>
             <p>
-              Explore the static preview on Vercel, star the repo on GitHub, or
-              run it locally — no API keys required.
+              Open the live demo or run locally — no API keys required.
             </p>
             <div className="heroActions">
               <a className="btn btnPrimary btnLight" href={LIVE_DEMO_URL}>
