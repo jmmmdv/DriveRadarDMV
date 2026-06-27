@@ -1,6 +1,8 @@
 # Monetization
 
-Revenue strategy for DriveRadarDMV. This is a **planning document**—no billing, Stripe, or paid features exist in the current MVP.
+Revenue strategy for DriveRadarDMV. This is a **planning document**—no billing, Stripe, or paid features exist in the current static MVP.
+
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** planning only until Phase 3
 
 ---
 
@@ -175,6 +177,7 @@ Until then, focus on product value—not checkout flows.
 
 ## Related documents
 
+- [README](../README.md) — Project overview, setup, screenshots, and live demo
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md)
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md)
 - [DATA_SOURCES.md](./DATA_SOURCES.md)

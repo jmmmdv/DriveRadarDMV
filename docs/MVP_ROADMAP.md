@@ -2,6 +2,8 @@
 
 Phased delivery plan for DriveRadarDMV. Each phase has a clear exit criteria so the team can ship incrementally without over-building.
 
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** static MVP (sample data only, no live APIs)
+
 **Last updated:** June 2026
 
 ---
@@ -27,8 +29,9 @@ Landing     Live data    Accounts     Premium
 - [x] Next.js project scaffold
 - [x] Responsive homepage with product story
 - [x] README and product documentation (`docs/`)
-- [ ] Production deploy on Vercel with custom domain
-- [ ] Homepage screenshots in `docs/assets/screenshots/`
+- [x] Production deploy on Vercel — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
+- [ ] Homepage screenshots in `docs/assets/screenshots/` (see [README § Screenshots](../README.md#screenshots))
+- [ ] Custom domain (`www.driveradardmv.com`)
 - [ ] Basic analytics (privacy-friendly, e.g. Vercel Analytics)
 
 ### Exit criteria
@@ -36,6 +39,7 @@ Landing     Live data    Accounts     Premium
 - Public URL loads in < 3s on mobile
 - A new visitor can explain the product in one sentence after 30 seconds on the site
 - Repository is fork/clone friendly with no secrets required
+- README includes desktop and mobile screenshots
 
 ---
 
@@ -162,6 +166,7 @@ Ideas not committed to a phase:
 
 ## Related documents
 
+- [README](../README.md) — Project overview, setup, screenshots, and live demo
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md)
 - [DATA_SOURCES.md](./DATA_SOURCES.md)
 - [MONETIZATION.md](./MONETIZATION.md)

@@ -2,6 +2,8 @@
 
 DriveRadarDMV is a regional driver-intelligence product for the Washington, DC metropolitan area (DMV). This document defines the problem, audience, positioning, and success criteria for the early MVP.
 
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** static MVP (sample data only, no live APIs)
+
 ---
 
 ## Problem statement
@@ -146,6 +148,7 @@ Success for Phase 0: visitors understand *what* DriveRadarDMV is, *who* it is fo
 
 ## Related documents
 
+- [README](../README.md) — Project overview, setup, screenshots, and live demo
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md) — Build phases and milestones
 - [DATA_SOURCES.md](./DATA_SOURCES.md) — Planned data integrations
 - [MONETIZATION.md](./MONETIZATION.md) — Revenue model

@@ -2,7 +2,9 @@
 
 Planned data integrations for DriveRadarDMV. This document describes **what we intend to use**, not what is wired up today.
 
-**Current MVP:** No live APIs. The homepage uses static placeholder content only.
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
+
+**Current MVP:** No live APIs. The homepage uses static sample cards only.
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
 
@@ -146,6 +148,7 @@ Implementation target: Next.js `fetch` with `revalidate` or edge-friendly cache 
 
 ## Related documents
 
+- [README](../README.md) — Project overview, setup, screenshots, and live demo
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md) — When each source ships
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md) — Why data quality matters to users
 - [MONETIZATION.md](./MONETIZATION.md) — When paid data may be justified
