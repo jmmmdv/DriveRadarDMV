@@ -83,20 +83,28 @@ No need for full WCAG certification at this stage — aim for sensible baseline.
 |---|---|
 | **Priority** | Medium |
 | **Type** | Feature |
+| **Status** | **Shipped** — see [SEO_PLAN.md](./SEO_PLAN.md) and [`app/layout.jsx`](../app/layout.jsx) |
 
 **Description**  
 Enhance `app/layout.jsx` metadata for search and sharing: title template, description, keywords (light touch), canonical URL, and Twitter card tags.
 
 **Acceptance criteria**
 
-- [ ] Unique, descriptive `<title>` and meta description
-- [ ] `metadataBase` set to production URL
-- [ ] Canonical link for homepage
-- [ ] Twitter / Open Graph title and description aligned with README positioning
-- [ ] Validates with [Google Rich Results Test](https://search.google.com/test/rich-results) or similar without errors for required fields
+- [x] Unique, descriptive `<title>` and meta description
+- [x] `metadataBase` set to production URL
+- [x] Canonical link for homepage
+- [x] Twitter / Open Graph title and description aligned with README positioning
+- [x] Documented in [SEO_PLAN.md](./SEO_PLAN.md)
+- [ ] Validates with [Google Rich Results Test](https://search.google.com/test/rich-results) or similar without errors for required fields *(manual check after deploy)*
 
 **Notes**  
-Keep copy honest: static previews vs live NWS weather.
+Keep copy honest: static previews vs live NWS weather. OG share image is a separate backlog item.
+
+**Next SEO tasks**
+
+- [ ] Add Open Graph image (`public/og-image.png`) — see SEO_PLAN.md
+- [ ] `sitemap.xml` / `robots.js` when more routes ship
+- [ ] Update `metadataBase` when custom domain connects
 
 ---
 
@@ -110,9 +118,12 @@ Keep copy honest: static previews vs live NWS weather.
 **Description**  
 Plan and add a share preview image for Slack, iMessage, LinkedIn, and Twitter cards — e.g. `public/og-image.png` or dynamic OG route.
 
+**Depends on:** SEO metadata improvement (shipped)
+
 **Acceptance criteria**
 
 - [ ] Document recommended dimensions (1200×630) and brand colors in issue or `docs/assets/`
+- [x] OG image plan documented in [SEO_PLAN.md](./SEO_PLAN.md)
 - [ ] OG image file added to repo OR documented plan for static asset generation
 - [ ] `openGraph.images` configured in layout metadata
 - [ ] Preview verified with [opengraph.xyz](https://www.opengraph.xyz/) or similar
