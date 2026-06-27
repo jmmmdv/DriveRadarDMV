@@ -554,25 +554,57 @@ Do not install Plausible, PostHog, or other SDKs until provider decision is reco
 
 ---
 
+### Issue: Run soft launch validation (3–10 drivers)
+
+| Field | Value |
+|---|---|
+| **Priority** | High |
+| **Type** | Research |
+| **Status** | **Plan documented** — see [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md); sessions manual |
+
+**Description**  
+Conduct structured soft launch validation with DMV drivers before wide public outreach. Complements homepage feedback UI (frontend-only) with live interviews and scoring.
+
+**Planning complete**
+
+- [x] [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md) — goal, testers, 3–5 plan, questions, scorecard, outreach templates, 7-day plan
+- [x] Linked from [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)
+
+**Acceptance criteria (execution — manual)**
+
+- [ ] At least **3–5 drivers** in week 1; **5–10** before public launch
+- [ ] Mix of profiles: rideshare, delivery, Uber Black/SUV, private/professional where possible
+- [ ] Session log completed per driver (one-sentence test, scores, quotes)
+- [ ] [Scoring table](./SOFT_LAUNCH_VALIDATION.md#simple-scoring-table) average ≥3.5 on clarity, usefulness, trust — or issues filed for fixes
+- [ ] Top 3 confusions and top 3 feature requests summarized in GitHub issue or doc
+- [ ] [Decision rules](./SOFT_LAUNCH_VALIDATION.md#decision-rules-after-feedback) applied; backlog priorities updated
+- [ ] No public launch until red flags in validation doc are resolved
+
+**Notes**  
+No analytics, paid panels, or code required unless copy changes follow. Use live demo URL only.
+
+---
+
 ### Issue: Run driver interview script (5–10 drivers)
 
 | Field | Value |
 |---|---|
 | **Priority** | High |
 | **Type** | Research |
+| **Status** | **Merged into soft launch plan** — use [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md) |
 
 **Description**  
 Conduct short interviews with DMV gig drivers. Validate problem, briefing usefulness, and willingness to return daily.
 
 **Acceptance criteria**
 
-- [ ] Interview script with 8–10 questions documented
+- [x] Interview script with 8–10 questions documented (see SOFT_LAUNCH_VALIDATION.md)
 - [ ] At least 5 conversations completed
 - [ ] Findings summarized: top 3 requested features, confusion points
 - [ ] Updates recommended to PRODUCT_STRATEGY success metrics section
 
 **Notes**  
-Qualitative validation — no code required unless copy changes follow.
+Qualitative validation — no code required unless copy changes follow. Canonical process: **Run soft launch validation** issue above.
 
 ---
 
@@ -778,6 +810,7 @@ Quick reference — **full checklist:** [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST
 - [ ] README live demo link correct; doc links work
 - [ ] Screenshots refreshed or marked pending in README
 - [ ] No secrets or `.env` in git; no paid APIs added
+- [ ] Soft launch validation completed (SOFT_LAUNCH_VALIDATION.md) — 3–5+ drivers, scores logged
 - [ ] Custom domain verified when ready (CUSTOM_DOMAIN_SETUP.md)
 - [ ] Scorecard reviewed before public launch (LAUNCH_CHECKLIST.md)
 
@@ -787,6 +820,7 @@ Quick reference — **full checklist:** [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST
 
 - [README](../README.md)
 - [LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)
+- [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md)
 - [MVP_ROADMAP.md](./MVP_ROADMAP.md)
 - [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md)
 - [DATA_SOURCES.md](./DATA_SOURCES.md)

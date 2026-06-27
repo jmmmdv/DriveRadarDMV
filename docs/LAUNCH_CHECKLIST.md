@@ -13,7 +13,7 @@ Pre-launch and re-launch checklist for DriveRadarDMV Phase 0 MVP. Use this befor
 1. Work through each section top to bottom before a launch or major announcement.
 2. Check boxes as you complete items (`[x]` in git when the whole launch passes).
 3. Re-run **Pre-launch technical checks** after any homepage, deploy, or dependency change.
-4. A “soft launch” (friends, 5 drivers) can skip custom domain and OG image; a “public launch” should score higher on the [readiness scorecard](#launch-readiness-scorecard).
+4. A “soft launch” (friends, 5 drivers) can skip custom domain and OG image; a **public launch** should complete [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md) and score higher on the [readiness scorecard](#launch-readiness-scorecard).
 
 ---
 
@@ -154,17 +154,22 @@ Optional validation: [Google Rich Results Test](https://search.google.com/test/r
 
 ## Driver validation checks *(soft launch)*
 
+**Full plan:** [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md) — complete **before public launch**, not optional for wide outreach.
+
 | # | Check | Done |
 |---|---|---|
-| 1 | At least **3–5 DMV drivers** (rideshare or delivery) viewed the live site | ☐ |
-| 2 | Asked: “What is this product in one sentence?” — answers match intent | ☐ |
-| 3 | Asked: “Would you check this before a shift?” — note objections | ☐ |
-| 4 | Daily briefing read as useful or confusing — capture quotes | ☐ |
-| 5 | Waitlist UI understood as not connected yet | ☐ |
-| 6 | Feedback UI understood as not connected yet | ☐ |
-| 7 | Feedback logged in issues, notes, or [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) | ☐ |
+| 1 | Soft launch plan reviewed; 3–5 driver sessions scheduled or completed | ☐ |
+| 2 | At least **3–5 DMV drivers** (mix: rideshare, delivery, Black/SUV, or private) viewed the live site | ☐ |
+| 3 | Asked: “What is this product in one sentence?” — answers match intent | ☐ |
+| 4 | Core questions asked: clarity, usefulness, best/confusing section, missing, weekly use, waitlist interest | ☐ |
+| 5 | Scoring table filled: clarity, usefulness, trust, visual, willingness to return | ☐ |
+| 6 | Daily briefing read as useful or confusing — capture quotes | ☐ |
+| 7 | Waitlist UI understood as not connected yet | ☐ |
+| 8 | Feedback UI understood as not connected yet | ☐ |
+| 9 | Red flags checked — no misleading live-data or earnings claims reported | ☐ |
+| 10 | Findings logged; [decision rules](./SOFT_LAUNCH_VALIDATION.md#decision-rules-after-feedback) applied | ☐ |
 
-See backlog issue: *Run driver interview script (5–10 drivers)*.
+See backlog issue: *Run soft launch validation (3–10 drivers)*.
 
 ---
 
@@ -211,7 +216,7 @@ Rate each area **Red / Yellow / Green** before a public launch. Soft launch can 
 | **Monetization readiness** | No payments promised; waitlist honest; [MONETIZATION.md](./MONETIZATION.md) aligned | ☐ R ☐ Y ☐ G |
 | **Validation readiness** | 3+ drivers seen site; disclaimers understood; no misleading claims reported | ☐ R ☐ Y ☐ G |
 
-**Public launch suggestion:** all **Technical**, **Product clarity**, and **Data readiness** at Green; no **Red** in Privacy-related items.
+**Public launch suggestion:** all **Technical**, **Product clarity**, and **Data readiness** at Green; no **Red** in Privacy-related items; **[SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md)** completed with acceptable scores.
 
 ---
 
@@ -249,6 +254,7 @@ npm run screenshots   # after UI changes, dev server running
 | Item | Doc |
 |---|---|
 | Launch checklist issue | [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) |
+| Soft launch validation | [SOFT_LAUNCH_VALIDATION.md](./SOFT_LAUNCH_VALIDATION.md) |
 | Custom domain | [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) |
 | OG image | [OPEN_GRAPH_PLAN.md](./OPEN_GRAPH_PLAN.md) |
 | Analytics (future) | [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) |

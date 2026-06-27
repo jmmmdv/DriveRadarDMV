@@ -215,6 +215,7 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | [docs/CUSTOM_DOMAIN_SETUP.md](docs/CUSTOM_DOMAIN_SETUP.md) | Connect driveradardmv.com to Vercel (manual DNS plan) |
 | [docs/OPEN_GRAPH_PLAN.md](docs/OPEN_GRAPH_PLAN.md) | Social share preview image plan (OG image not shipped yet) |
 | [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) | Pre-launch and re-launch verification checklist |
+| [docs/SOFT_LAUNCH_VALIDATION.md](docs/SOFT_LAUNCH_VALIDATION.md) | Driver testing plan before public launch |
 | [docs/MONETIZATION.md](docs/MONETIZATION.md) | Revenue model and pricing hypotheses |
 
 All docs describe the **static MVP stage** unless a phase is explicitly labeled future work.
@@ -247,6 +248,7 @@ driveradardmv/
 │   ├── CUSTOM_DOMAIN_SETUP.md
 │   ├── OPEN_GRAPH_PLAN.md
 │   ├── LAUNCH_CHECKLIST.md
+│   ├── SOFT_LAUNCH_VALIDATION.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/
