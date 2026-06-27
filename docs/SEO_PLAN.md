@@ -4,7 +4,7 @@ Search and social sharing strategy for DriveRadarDMV. This document describes **
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Implementation:** [`app/layout.jsx`](../app/layout.jsx)
 
-**Related:** [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md) · [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) · [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)
+**Related:** [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md) · [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md) · [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) · [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)
 
 ---
 
@@ -22,7 +22,7 @@ Configured in [`app/layout.jsx`](../app/layout.jsx) via the Next.js App Router `
 
 | Field | Value / behavior |
 |---|---|
-| **metadataBase** | `https://drive-radar-dmv.vercel.app/` — resolves relative OG and canonical URLs |
+| **metadataBase** | `https://drive-radar-dmv.vercel.app/` today — update to `https://driveradardmv.com/` after custom domain is live ([CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md)) |
 | **title** | Default: `DriveRadarDMV \| DMV Driver Intelligence MVP`; template: `%s \| DriveRadarDMV` for future pages |
 | **description** | DMV driver intelligence for rideshare, delivery, Uber Black/SUV, private, and professional drivers; notes MVP scope |
 | **keywords** | Light-touch array (DMV driver intelligence, rideshare DC, delivery MD, airports DCA/IAD/BWI, etc.) |
@@ -48,7 +48,7 @@ Current description explicitly mentions **MVP preview**, **live NWS weather**, a
 |---|---|
 | Open Graph share image (`og-image.png`) | Planned — see [Open Graph image plan](#open-graph-image-plan) |
 | `twitter:images` | Waiting on OG asset |
-| Custom domain canonical (`www.driveradardmv.com`) | Planned when DNS connects |
+| Custom domain canonical (`driveradardmv.com`) | Planned — DNS steps in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md); then update `metadataBase` and canonical in `app/layout.jsx` |
 | `sitemap.xml` / `robots.txt` | Future Phase 1 |
 | Structured data (JSON-LD) | Future when pages and FAQs exist |
 | Per-page metadata | Future routes (`/briefing`, blog, zone pages) |
@@ -86,7 +86,7 @@ Avoid keyword stuffing. One clear primary phrase per page when content expands.
 - [x] Root layout metadata (title, description, OG, Twitter, robots, canonical)
 - [x] Document plan in this file
 - [ ] Add static OG image and wire `openGraph.images` / `twitter.images`
-- [ ] Connect custom domain; update `metadataBase` and canonical URLs
+- [ ] Connect custom domain; update `metadataBase` and canonical URLs — follow [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) **After domain is live** section
 
 ### Phase 1 — Discoverability
 
@@ -187,7 +187,7 @@ After metadata changes, spot-check:
 |---|---|
 | SEO metadata improvement | ✅ Shipped — see layout + this doc |
 | Open Graph image plan | 📋 Next — asset + `openGraph.images` |
-| Custom domain setup | 📋 Updates `metadataBase` after cutover |
+| Custom domain setup | 📋 Plan in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md); update `metadataBase` after cutover |
 
 Details: [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md)
 

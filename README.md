@@ -174,7 +174,7 @@ No environment variables or API keys are required.
 
 **Production URL:** [https://drive-radar-dmv.vercel.app/](https://drive-radar-dmv.vercel.app/)
 
-Custom domain *(optional):* connect `www.driveradardmv.com` in Vercel → Project → Settings → Domains.
+**Custom domain *(planned)*:** [driveradardmv.com](https://driveradardmv.com) — step-by-step DNS plan in [docs/CUSTOM_DOMAIN_SETUP.md](docs/CUSTOM_DOMAIN_SETUP.md). Keep the Vercel URL as live demo until DNS cutover is complete.
 
 ### Other platforms
 
@@ -211,6 +211,7 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Planned free/public sources (no paid APIs yet) |
 | [docs/ANALYTICS_PLAN.md](docs/ANALYTICS_PLAN.md) | Privacy-first analytics planning (not implemented yet) |
 | [docs/SEO_PLAN.md](docs/SEO_PLAN.md) | SEO metadata, keywords, and sharing strategy |
+| [docs/CUSTOM_DOMAIN_SETUP.md](docs/CUSTOM_DOMAIN_SETUP.md) | Connect driveradardmv.com to Vercel (manual DNS plan) |
 | [docs/MONETIZATION.md](docs/MONETIZATION.md) | Revenue model and pricing hypotheses |
 
 All docs describe the **static MVP stage** unless a phase is explicitly labeled future work.
@@ -238,6 +239,7 @@ driveradardmv/
 │   ├── ISSUES_BACKLOG.md
 │   ├── ANALYTICS_PLAN.md
 │   ├── SEO_PLAN.md
+│   ├── CUSTOM_DOMAIN_SETUP.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/

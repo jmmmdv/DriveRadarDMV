@@ -41,7 +41,7 @@ The **Daily Driver Briefing** is the decision layer that combines Weather, Event
 - [x] Daily driver briefing (static synthesis of all modules)
 - [x] Waitlist form UI (frontend-only preview — validation step before backend)
 - [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
-- [ ] Custom domain (`www.driveradardmv.com`)
+- [ ] Custom domain (`driveradardmv.com`) — plan in [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md)
 - [ ] Basic analytics (privacy-friendly — see [ANALYTICS_PLAN.md](./ANALYTICS_PLAN.md); plan done, not enabled)
 
 ### Exit criteria

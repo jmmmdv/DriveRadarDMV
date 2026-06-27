@@ -161,19 +161,30 @@ Script already exists at `scripts/capture-screenshots.js`. No new dependencies r
 |---|---|
 | **Priority** | Medium |
 | **Type** | Documentation |
+| **Status** | **Plan documented** — see [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md); DNS not configured in repo |
 
 **Description**  
-Write a step-by-step plan to connect `www.driveradardmv.com` to the Vercel project without downtime.
+Write a step-by-step plan to connect `driveradardmv.com` and `www.driveradardmv.com` to the Vercel project without downtime.
 
-**Acceptance criteria**
+**Acceptance criteria (documentation)**
 
-- [ ] DNS record types documented (A/CNAME as required by Vercel)
-- [ ] Vercel domain verification steps listed
-- [ ] Redirect strategy noted (apex → www or vice versa)
-- [ ] Post-cutover checklist: update README links, metadata `metadataBase`, and docs live URLs
+- [x] [CUSTOM_DOMAIN_SETUP.md](./CUSTOM_DOMAIN_SETUP.md) — goal, DNS, HTTPS, verification, troubleshooting, rollback
+- [x] Beginner steps: Vercel domains, registrar DNS, propagation, test both URLs
+- [x] “Do not commit secrets” section
+- [x] “After domain is live” post-cutover checklist (README, metadataBase, SEO, build)
+- [x] DNS record types documented (A for apex, CNAME for www — confirm values in Vercel dashboard)
+- [x] Vercel domain verification steps listed
+- [x] Redirect strategy noted (apex ↔ www)
+
+**Acceptance criteria (implementation — manual, outside repo)**
+
+- [ ] Domains added in Vercel project settings
+- [ ] DNS records live at registrar; Vercel shows **Valid configuration**
+- [ ] `https://driveradardmv.com` and `https://www.driveradardmv.com` tested
+- [ ] Post-cutover: update README live demo link, `metadataBase` in [`app/layout.jsx`](../app/layout.jsx), [SEO_PLAN.md](./SEO_PLAN.md)
 
 **Notes**  
-Domain purchase and DNS changes are manual — doc only, no secrets in repo.
+Domain purchase and DNS changes are manual — no secrets in repo. Vercel URL remains fallback until cutover.
 
 ---
 
