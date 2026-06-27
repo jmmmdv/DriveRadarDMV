@@ -4,7 +4,7 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
-**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events use **static demo cards** in [`lib/events.js`](../lib/events.js). Airports use **static demo cards** in [`lib/airports.js`](../lib/airports.js). Demand zones remain a static sample card on the homepage.
+**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events, airports, and demand zones use **static demo cards** in [`lib/events.js`](../lib/events.js), [`lib/airports.js`](../lib/airports.js), and [`lib/demandZones.js`](../lib/demandZones.js).
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
 
@@ -82,6 +82,31 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
+### Demand zones — static MVP preview *(shipped as demo)*
+
+| Item | Detail |
+|---|---|
+| **Source** | Static data in [`lib/demandZones.js`](../lib/demandZones.js) |
+| **Cost** | Free (no API) |
+| **API key** | Not required |
+| **Implementation** | [`app/components/DemandZones.jsx`](../app/components/DemandZones.jsx) |
+| **Status** | MVP preview only — **not live demand prediction** |
+| **Zones** | Downtown DC, Georgetown / Foggy Bottom, Navy Yard, Arlington / Rosslyn, Tysons, National Harbor / MGM |
+
+**Planned free/public sources for live demand hints (Phase 1+):**
+
+| Source | Type | Cost | Notes |
+|---|---|---|---|
+| US Census / OpenStreetMap boundaries | Static / OSS | Free | DMV zone definitions |
+| Internal heuristics | Code | — | Commute peaks, event correlation, time-of-day windows |
+| Public event & traffic feeds | Various | Free | Indirect demand signals when correlated with zones |
+
+**Use cases:** Zone-level opportunity highlights for rideshare, delivery, Uber Black/SUV, and private drivers — without claiming access to proprietary rideshare demand data.
+
+**Phase 1 approach:** Combine time-of-day heuristics with public event and traffic context. Until then, demand cards are labeled **Sample preview**.
+
+---
+
 ## Design principles
 
 1. **Prefer official open data** — government and agency feeds over scraped third-party sites.
@@ -137,14 +162,16 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
-### Time & geography baselines
+### Time & geography baselines *(planned — live demand hints)*
+
+**Current status:** Static demo cards only. See [Live integrations → Demand zones](#demand-zones--static-mvp-preview-shipped-as-demo) above.
 
 | Source | Type | Cost | Notes |
 |---|---|---|---|
 | US Census / OpenStreetMap boundaries | Static / OSS | Free | DMV zone definitions |
 | Internal heuristics | Code | — | Commute peaks (AM/PM), weekend nightlife windows |
 
-**Use cases:** "High-demand times" card without claiming access to proprietary rideshare demand data.
+**Use cases:** "High-demand times" and zone highlights without claiming access to proprietary rideshare demand data.
 
 ---
 

@@ -1,6 +1,7 @@
 import WeatherIntelligence from "./components/WeatherIntelligence";
 import EventsIntelligence from "./components/EventsIntelligence";
 import AirportIntelligence from "./components/AirportIntelligence";
+import DemandZones from "./components/DemandZones";
 
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
@@ -17,22 +18,6 @@ const problemPoints = [
   {
     title: "No regional focus",
     text: "National tools miss DC-specific patterns: commutes, monuments, stadiums, and three major airports."
-  }
-];
-
-const sampleCards = [
-  {
-    type: "Demand-zone preview",
-    icon: "◎",
-    headline: "Downtown DC · Evening",
-    detail: "Elevated ride activity expected near office corridors and dining districts",
-    signal: "Zone highlight",
-    signalLevel: "high",
-    zones: [
-      { name: "Downtown DC", level: 85 },
-      { name: "Arlington", level: 62 },
-      { name: "Tysons", level: 48 }
-    ]
   }
 ];
 
@@ -87,10 +72,10 @@ const mvpItems = [
   { label: "Live weather intelligence (NWS API)", done: true },
   { label: "Events intelligence preview (static)", done: true },
   { label: "Airport intelligence preview (static)", done: true },
-  { label: "Static preview cards (demand zones)", done: true },
+  { label: "Demand zones intelligence preview (static)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
-  { label: "Live API feeds (events, traffic, airports)", done: false },
+  { label: "Live API feeds (events, traffic, airports, demand)", done: false },
   { label: "User accounts & alerts", done: false },
   { label: "Payments & premium tier", done: false }
 ];
@@ -100,7 +85,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Landing page", "Live weather (NWS)", "Events & airports preview", "Product docs"]
+    items: ["Landing page", "Live weather (NWS)", "Events, airports & zones preview", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -134,7 +119,7 @@ export default function Home() {
             <a href="#weather">Weather</a>
             <a href="#events">Events</a>
             <a href="#airports">Airports</a>
-            <a href="#preview">Preview</a>
+            <a href="#zones">Zones</a>
             <a href="#features">Features</a>
             <a href="#roadmap">Roadmap</a>
             <a className="navCta" href={LIVE_DEMO_URL}>
@@ -147,12 +132,12 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="heroContent">
-            <p className="eyebrow">DMV driver intelligence · Weather, Events &amp; Airports MVP</p>
+            <p className="eyebrow">DMV driver intelligence · Full preview MVP</p>
             <h1>Drive smarter across DC, Maryland &amp; Virginia</h1>
             <p className="heroText">
               One regional view for weather, events, airport activity, and demand
-              zones — built for rideshare, delivery, and professional drivers who
-              need clarity before every shift.
+              zones — built for rideshare, delivery, Uber Black/SUV, private, and
+              professional drivers who need clarity before every shift.
             </p>
             <div className="heroActions">
               <a className="btn btnPrimary" href={LIVE_DEMO_URL}>
@@ -163,9 +148,9 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Intelligence MVP</span>
+              <span>Full preview MVP</span>
               <span>Live NWS weather</span>
-              <span>Static event &amp; airport previews</span>
+              <span>Static zone previews</span>
             </div>
           </div>
         </section>
@@ -196,50 +181,7 @@ export default function Home() {
 
         <AirportIntelligence />
 
-        <section className="previewSection" id="preview" aria-labelledby="preview-title">
-          <div className="sectionHeader">
-            <p className="sectionLabel">Intelligence preview</p>
-            <h2 id="preview-title">What your daily briefing could look like</h2>
-            <p className="sectionIntro">
-              This card uses <strong>static sample content</strong> for demand
-              zones. Weather, events, and airports have dedicated sections above.
-            </p>
-          </div>
-          <div className="sampleGrid">
-            {sampleCards.map((card) => (
-              <article className="sampleCard" key={card.type}>
-                <div className="sampleCardTop">
-                  <span className="sampleIcon" aria-hidden="true">
-                    {card.icon}
-                  </span>
-                  <span className="sampleBadge">Sample data</span>
-                </div>
-                <p className="sampleType">{card.type}</p>
-                <h3>{card.headline}</h3>
-                <p className="sampleDetail">{card.detail}</p>
-                {card.zones ? (
-                  <ul className="zoneBars" aria-label="Sample demand zones">
-                    {card.zones.map((zone) => (
-                      <li key={zone.name}>
-                        <span className="zoneName">{zone.name}</span>
-                        <span className="zoneTrack">
-                          <span
-                            className="zoneFill"
-                            style={{ width: `${zone.level}%` }}
-                          />
-                        </span>
-                        <span className="zonePct">{zone.level}%</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-                <span className={`signalTag signalTag--${card.signalLevel}`}>
-                  {card.signal}
-                </span>
-              </article>
-            ))}
-          </div>
-        </section>
+        <DemandZones />
 
         <section className="features" id="features" aria-labelledby="features-title">
           <div className="sectionHeader">
@@ -285,9 +227,9 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                This MVP includes live weather from the National Weather Service,
-                static events and airport intelligence previews, and a demand-zone
-                sample card — no accounts or payments yet.
+                This MVP includes live weather from the National Weather Service
+                plus static previews for events, airports, and demand zones — no
+                accounts or payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -361,7 +303,7 @@ export default function Home() {
             <a href={REPO_URL}>GitHub</a>
             <a href="https://www.driveradardmv.com">driveradardmv.com</a>
           </div>
-          <span className="footerBadge">Intelligence MVP</span>
+          <span className="footerBadge">Full preview MVP</span>
         </div>
       </footer>
     </>

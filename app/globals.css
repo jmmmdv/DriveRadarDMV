@@ -708,6 +708,125 @@ main {
   margin-top: auto;
 }
 
+/* Demand zones intelligence */
+
+.demandSection {
+  padding: clamp(56px, 8vw, 88px) 0;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--background) 0%, var(--surface-soft) 100%);
+}
+
+.demandDisclaimer {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  background: #f0fdf4;
+  color: #14532d;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.demandMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.demandSourceBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.demandSourceBadge--preview {
+  background: var(--surface-muted);
+  color: var(--muted);
+}
+
+.demandUpdated {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.demandGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.demandCard {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.demandCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.demandCardTop h3 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 1.05rem;
+}
+
+.demandBadge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.demandDetails {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.demandRow {
+  display: grid;
+  gap: 4px;
+}
+
+.demandRow dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.demandRow dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.demandCard .signalTag {
+  margin-top: auto;
+}
+
 /* Sample cards */
 
 .previewSection {
@@ -1137,6 +1256,10 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .demandGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .roadmapGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1171,6 +1294,7 @@ main {
   .weatherGrid,
   .eventsGrid,
   .airportsGrid,
+  .demandGrid,
   .coverageList,
   .roadmapGrid {
     grid-template-columns: 1fr;
