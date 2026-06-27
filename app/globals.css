@@ -973,6 +973,129 @@ main {
   margin-top: 28px;
 }
 
+/* Waitlist */
+
+.waitlistSection {
+  padding: clamp(40px, 6vw, 56px) 0;
+}
+
+.waitlistPanel {
+  padding: clamp(24px, 4vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.waitlistHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.waitlistIntro {
+  margin: 8px 0 0;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.waitlistNote {
+  margin: 0 0 20px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.waitlistForm {
+  display: grid;
+  gap: 16px;
+}
+
+.waitlistFields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.waitlistField {
+  display: grid;
+  gap: 6px;
+}
+
+.waitlistField span {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.waitlistField input,
+.waitlistField select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.waitlistField input:focus,
+.waitlistField select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.btnPrimaryDark {
+  justify-self: start;
+  border: none;
+  background: var(--accent-dark);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btnPrimaryDark:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btnSecondaryDark {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnSecondaryDark:hover {
+  background: var(--surface-soft);
+}
+
+.waitlistSuccess {
+  padding: 20px;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  background: #f0fdf4;
+}
+
+.waitlistSuccess p {
+  margin: 0 0 16px;
+  color: #14532d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* Footer */
 
 .siteFooter {
@@ -1071,6 +1194,19 @@ main {
   .intelSectionHead {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .waitlistHeader {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .waitlistFields {
+    grid-template-columns: 1fr;
+  }
+
+  .btnPrimaryDark {
+    width: 100%;
   }
 
   .briefingGrid,

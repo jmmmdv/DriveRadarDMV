@@ -365,20 +365,50 @@ Learn whether drivers find value before building payments or heavy infrastructur
 |---|---|
 | **Priority** | High |
 | **Type** | Feature |
+| **Status** | **UI preview shipped** — backend integration remains |
 
 **Description**  
 Add a simple waitlist capture on homepage or `/briefing` for drivers interested in live data and email digests. Use a free tier-friendly approach (e.g. Formspree, Google Form embed, or Vercel-compatible form backend) — **no secrets in repo**.
 
-**Acceptance criteria**
+**Shipped (Phase 0 preview)**
 
-- [ ] Form fields: email (required), optional driver type (rideshare / delivery / private)
+- [x] Homepage waitlist section before final CTA ([`app/components/WaitlistForm.jsx`](../../app/components/WaitlistForm.jsx))
+- [x] Form fields: name, email, driver type (rideshare / delivery / Uber Black·SUV / private / other)
+- [x] Frontend-only success message — no API, no storage, no env vars
+- [x] MVP disclaimer: “Frontend-only MVP preview. No data is stored yet.”
+
+**Acceptance criteria (backend — future)**
+
+- [ ] Persist submissions via free-tier form backend or database
 - [ ] Clear privacy note: what email will be used for
-- [ ] Submission works on production deploy
-- [ ] Environment variables documented in README **setup** section only if needed — never committed
+- [ ] Submission works on production deploy with documented env setup (values never committed)
 - [ ] MVP disclaimer: waitlist ≠ guaranteed features
 
 **Notes**  
-If using env vars for form endpoint, document variable names in README without values.
+UI preview is intentionally disconnected. When adding a backend, document variable names in README without values.
+
+---
+
+### Issue: Connect waitlist form to storage / email provider
+
+| Field | Value |
+|---|---|
+| **Priority** | High |
+| **Type** | Engineering |
+| **Depends on** | Waitlist UI preview (shipped) |
+
+**Description**  
+Wire the homepage waitlist to a free-tier-friendly backend (Formspree, Supabase, Resend audience, etc.) so sign-ups are stored and optionally trigger a confirmation email.
+
+**Acceptance criteria**
+
+- [ ] Submissions persist in production
+- [ ] No secrets in repo; env vars documented in README setup only
+- [ ] Graceful error state if backend unavailable
+- [ ] Privacy policy draft linked from form section
+
+**Notes**  
+Do not ship until Phase 2 auth/storage decisions are made.
 
 ---
 

@@ -39,6 +39,7 @@ The **Daily Driver Briefing** is the decision layer that combines Weather, Event
 - [x] Airport intelligence preview (static DCA / IAD / BWI cards)
 - [x] Demand zones intelligence preview (static zone cards)
 - [x] Daily driver briefing (static synthesis of all modules)
+- [x] Waitlist form UI (frontend-only preview — validation step before backend)
 - [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
 - [ ] Custom domain (`www.driveradardmv.com`)
 - [ ] Basic analytics (privacy-friendly, e.g. Vercel Analytics)
@@ -49,6 +50,16 @@ The **Daily Driver Briefing** is the decision layer that combines Weather, Event
 - A new visitor can explain the product in one sentence after 30 seconds on the site
 - Repository is fork/clone friendly with no secrets required
 - README includes desktop and mobile screenshots
+
+### Validation preview (pre-Phase 2)
+
+Early product validation before accounts, email digests, or payments:
+
+| Step | Status | Notes |
+|---|---|---|
+| Waitlist UI on homepage | **Shipped** | Name, email, driver type — frontend-only; no data stored |
+| Waitlist backend / storage | Planned | Phase 2 — free-tier form backend or database; env vars documented, never committed |
+| Driver feedback (“Was this useful?”) | Planned | Phase 3 backlog — see [ISSUES_BACKLOG.md](./ISSUES_BACKLOG.md) |
 
 ---
 
@@ -100,6 +111,7 @@ The **Daily Driver Briefing** is the decision layer that combines Weather, Event
 | Feature | Priority |
 |---|---|
 | Email or magic-link sign-in | P0 |
+| Waitlist backend (persist sign-ups from homepage form) | P0 |
 | Saved home zone / preferred airports | P0 |
 | Daily email or push digest ("Today's DMV brief") | P1 |
 | Favorite corridors or neighborhoods | P2 |
