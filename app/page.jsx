@@ -76,7 +76,7 @@ const mvpItems = [
   { label: "Events intelligence preview (static)", done: true },
   { label: "Airport intelligence preview (static)", done: true },
   { label: "Demand zones intelligence preview (static)", done: true },
-  { label: "Daily driver briefing (static synthesis)", done: true },
+  { label: "Daily driver briefing (NWS weather auto-compose)", done: true },
   { label: "Waitlist form UI (frontend-only preview)", done: true },
   { label: "Driver feedback form UI (frontend-only preview)", done: true },
   { label: "Product documentation", done: true },

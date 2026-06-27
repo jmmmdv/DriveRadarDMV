@@ -347,20 +347,21 @@ Phase 2 can start with rules-based logic before any external feed.
 |---|---|
 | **Priority** | High |
 | **Type** | Feature |
+| **Status** | **Shipped (weather only)** — events/airports/zones composition remains Phase 1 |
 
 **Description**  
 Extend `lib/dailyBriefing.js` to pull weather summary from `getDmvWeatherIntelligence()` for the weather caution block while keeping other briefing fields static until more feeds exist.
 
 **Acceptance criteria**
 
-- [ ] Weather caution reflects live NWS when available; fallback when not
-- [ ] Briefing still renders if weather fetch fails entirely
-- [ ] `DailyBriefing.jsx` remains a server component if async required
-- [ ] Disclaimer unchanged: briefing is not official advice
-- [ ] `npm run build` passes
+- [x] Weather caution reflects NWS forecast when available; fallback when not
+- [x] Overall outlook adjusts when multiple zones show weather impact
+- [x] Briefing still renders if weather fetch fails entirely
+- [x] `DailyBriefing.jsx` async server component
+- [x] Disclaimer: briefing is not official advice; static sections labeled
+- [x] `npm run build` passes
 
-**Notes**  
-First step toward a real decision layer — no new dependencies.
+**Next:** Compose event + airport blocks from live modules — see [PHASE1_PAID_READY.md](./PHASE1_PAID_READY.md)
 
 ---
 

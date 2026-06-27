@@ -192,6 +192,17 @@ main {
   font-size: 0.88rem;
 }
 
+.briefingAttribution {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
 .briefingGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

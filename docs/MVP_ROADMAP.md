@@ -75,7 +75,7 @@ Early product validation before accounts, email digests, or payments:
 
 | Feature | Priority | Notes |
 |---|---|---|
-| Daily driver briefing | P0 | ✅ Static synthesis shipped; auto-compose from live modules in Phase 1 |
+| Daily driver briefing | P0 | ✅ Weather auto-compose shipped; events/airports/zones static until Phase 1 |
 | Regional weather summary | P0 | ✅ Shipped on homepage via NWS |
 | Today's notable events | P0 | Static preview shipped; live feeds + seed list next |
 | Airport day overview | P1 | Static preview shipped (DCA, IAD, BWI); live FAA summaries next |

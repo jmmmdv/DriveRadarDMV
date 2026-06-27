@@ -3,8 +3,8 @@ import {
   getDailyDriverBriefing
 } from "../../lib/dailyBriefing";
 
-export default function DailyBriefing() {
-  const briefing = getDailyDriverBriefing();
+export default async function DailyBriefing() {
+  const briefing = await getDailyDriverBriefing();
 
   return (
     <section
@@ -19,8 +19,14 @@ export default function DailyBriefing() {
             <h2 id="briefing-title">Daily Driver Briefing</h2>
             <p className="briefingDate">{briefing.dateLabel}</p>
           </div>
-          <span className="intelStatus intelStatus--preview">Static preview</span>
+          <span className={`intelStatus intelStatus--${briefing.status}`}>
+            {briefing.statusText}
+          </span>
         </div>
+
+        <p className="briefingAttribution" role="note">
+          {briefing.attribution}
+        </p>
 
         <div className="briefingGrid">
           {BRIEFING_ITEMS.map((item) => {

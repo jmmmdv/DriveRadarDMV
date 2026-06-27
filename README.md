@@ -77,7 +77,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 ### Shipped
 
 - [x] Mobile-friendly marketing homepage ([`app/page.jsx`](app/page.jsx))
-- [x] **Daily driver briefing** — static synthesis via [`lib/dailyBriefing.js`](lib/dailyBriefing.js)
+- [x] **Daily driver briefing** — auto-composes weather caution from NWS forecast when available via [`lib/dailyBriefing.js`](lib/dailyBriefing.js); other sections static preview
 - [x] **NWS forecast weather** — public NWS API via [`lib/weather.js`](lib/weather.js) when available; clearly labeled demo fallback on failure (not real-time observations)
 - [x] **Events intelligence preview** — static zone cards via [`lib/events.js`](lib/events.js)
 - [x] **Airport intelligence preview** — static DCA / IAD / BWI cards via [`lib/airports.js`](lib/airports.js)
@@ -216,6 +216,9 @@ Full breakdown: [docs/MVP_ROADMAP.md](docs/MVP_ROADMAP.md)
 | [docs/OPEN_GRAPH_PLAN.md](docs/OPEN_GRAPH_PLAN.md) | Social share preview image plan (OG image not shipped yet) |
 | [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) | Pre-launch and re-launch verification checklist |
 | [docs/SOFT_LAUNCH_VALIDATION.md](docs/SOFT_LAUNCH_VALIDATION.md) | Driver testing plan before public launch |
+| [docs/PHASE1_PAID_READY.md](docs/PHASE1_PAID_READY.md) | Minimum features before payments / App Store |
+| [docs/DRIVER_INTERVIEW_SCRIPT.md](docs/DRIVER_INTERVIEW_SCRIPT.md) | 10-driver interview script with payment questions |
+| [docs/WEB_FIRST_MOBILE.md](docs/WEB_FIRST_MOBILE.md) | Web-first vs App Store strategy |
 | [docs/MONETIZATION.md](docs/MONETIZATION.md) | Revenue model and pricing hypotheses |
 
 All docs describe the **static MVP stage** unless a phase is explicitly labeled future work.
@@ -249,6 +252,9 @@ driveradardmv/
 │   ├── OPEN_GRAPH_PLAN.md
 │   ├── LAUNCH_CHECKLIST.md
 │   ├── SOFT_LAUNCH_VALIDATION.md
+│   ├── PHASE1_PAID_READY.md
+│   ├── DRIVER_INTERVIEW_SCRIPT.md
+│   ├── WEB_FIRST_MOBILE.md
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/
