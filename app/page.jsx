@@ -1,3 +1,5 @@
+import WeatherIntelligence from "./components/WeatherIntelligence";
+
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
 
@@ -104,10 +106,11 @@ const coverageAreas = [
 
 const mvpItems = [
   { label: "Landing page & product story", done: true },
-  { label: "Static intelligence preview cards", done: true },
+  { label: "Live weather intelligence (NWS API)", done: true },
+  { label: "Static preview cards (events, airports, zones)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
-  { label: "Live API data feeds", done: false },
+  { label: "Other live API feeds (events, traffic)", done: false },
   { label: "User accounts & alerts", done: false },
   { label: "Payments & premium tier", done: false }
 ];
@@ -117,7 +120,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Landing page", "Product docs", "Static demo cards"]
+    items: ["Landing page", "Live weather (NWS)", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -148,6 +151,7 @@ export default function Home() {
             DriveRadar<span>DMV</span>
           </a>
           <nav className="headerNav" aria-label="Primary">
+            <a href="#weather">Weather</a>
             <a href="#preview">Preview</a>
             <a href="#features">Features</a>
             <a href="#roadmap">Roadmap</a>
@@ -161,7 +165,7 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="heroContent">
-            <p className="eyebrow">DMV driver intelligence · Static MVP</p>
+            <p className="eyebrow">DMV driver intelligence · Weather MVP</p>
             <h1>Drive smarter across DC, Maryland &amp; Virginia</h1>
             <p className="heroText">
               One regional view for weather, events, airport activity, and demand
@@ -177,9 +181,9 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Static MVP</span>
-              <span>Sample data only</span>
-              <span>No live APIs yet</span>
+              <span>Weather MVP</span>
+              <span>Live NWS data</span>
+              <span>Not safety-critical</span>
             </div>
           </div>
         </section>
@@ -204,14 +208,16 @@ export default function Home() {
           </div>
         </section>
 
+        <WeatherIntelligence />
+
         <section className="previewSection" id="preview" aria-labelledby="preview-title">
           <div className="sectionHeader">
             <p className="sectionLabel">Intelligence preview</p>
             <h2 id="preview-title">What your daily briefing could look like</h2>
             <p className="sectionIntro">
-              These cards use <strong>static sample content</strong> to show the
-              product direction. Live data from free public sources is planned for
-              Phase 1 — no APIs are connected in this MVP.
+              These cards use <strong>static sample content</strong> for events,
+              airports, and demand zones. Weather uses live NWS data in the
+              section above when available.
             </p>
           </div>
           <div className="sampleGrid">
@@ -294,9 +300,9 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                This is a professional static MVP: real deployment, real product
-                docs, and sample UI — but no live feeds, accounts, or payments
-                yet.
+                This MVP includes live weather from the National Weather Service
+                plus static sample cards for other modules — no accounts or
+                payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -370,7 +376,7 @@ export default function Home() {
             <a href={REPO_URL}>GitHub</a>
             <a href="https://www.driveradardmv.com">driveradardmv.com</a>
           </div>
-          <span className="footerBadge">Static MVP</span>
+          <span className="footerBadge">Weather MVP</span>
         </div>
       </footer>
     </>

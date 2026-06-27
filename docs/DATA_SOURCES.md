@@ -4,9 +4,33 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
-**Current MVP:** No live APIs. The homepage uses static sample cards only.
+**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api) on the homepage. Events, airports, and demand zones remain static sample cards.
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
+
+---
+
+## Live integrations
+
+### Weather — National Weather Service *(shipped)*
+
+| Item | Detail |
+|---|---|
+| **Source** | [NWS API](https://api.weather.gov/) |
+| **Cost** | Free |
+| **API key** | Not required |
+| **Implementation** | [`lib/weather.js`](../lib/weather.js) + [`app/components/WeatherIntelligence.jsx`](../app/components/WeatherIntelligence.jsx) |
+| **Cache** | 15 minutes (`revalidate: 900`) |
+| **Fallback** | Static sample cards per location if fetch fails |
+| **Locations** | Washington DC, Arlington VA, Dulles / NoVA, Baltimore / BWI |
+
+**Request flow:**
+
+1. `GET https://api.weather.gov/points/{lat},{lon}` with a `User-Agent` header
+2. `GET` the `properties.forecast` URL from the points response
+3. Map the current forecast period to driver impact and suggested action
+
+**Not included yet:** hourly forecast, weather alerts banner, historical trends.
 
 ---
 
@@ -20,20 +44,7 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
-## Phase 1 sources (planned)
-
-### Weather
-
-| Source | Type | Cost | Coverage | Notes |
-|---|---|---|---|---|
-| [National Weather Service API](https://www.weather.gov/documentation/services-web-api) | REST | Free | US / DMV gridpoints | Authoritative; no key required for basic use |
-| [Open-Meteo](https://open-meteo.com/) | REST | Free (non-commercial) | Global | Backup or enrichment; review license at scale |
-
-**Use cases:** Current conditions, hourly forecast, severe weather alerts, driving-relevant summaries (rain, snow, heat, wind).
-
----
-
-### Road closures & traffic incidents
+## Phase 1 sources (planned — additional modules)
 
 | Source | Type | Cost | Coverage | Notes |
 |---|---|---|---|---|
