@@ -2,7 +2,7 @@
 
 Phased delivery plan for DriveRadarDMV. Each phase has a clear exit criteria so the team can ship incrementally without over-building.
 
-**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** static MVP (sample data only, no live APIs)
+**Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) · **Stage:** Weather MVP live (NWS) · Events static preview
 
 **Last updated:** June 2026
 
@@ -30,6 +30,8 @@ Landing     Live data    Accounts     Premium
 - [x] Responsive homepage with product story
 - [x] README and product documentation (`docs/`)
 - [x] Production deploy on Vercel — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
+- [x] Live weather intelligence (NWS API)
+- [x] Events intelligence preview (static zone cards)
 - [x] Homepage screenshots in `docs/assets/screenshots/` (`npm run screenshots`)
 - [ ] Custom domain (`www.driveradardmv.com`)
 - [ ] Basic analytics (privacy-friendly, e.g. Vercel Analytics)
@@ -52,8 +54,8 @@ Landing     Live data    Accounts     Premium
 
 | Feature | Priority | Notes |
 |---|---|---|
-| Regional weather summary | P0 | NWS or Open-Meteo; DMV-wide + sub-regions |
-| Today's notable events | P0 | Manual seed list + public event feeds where available |
+| Regional weather summary | P0 | ✅ Shipped on homepage via NWS |
+| Today's notable events | P0 | Static preview shipped; live feeds + seed list next |
 | Airport day overview | P1 | DCA, IAD, BWI — delays and general activity context |
 | Commute demand hints | P1 | Time-of-day heuristics; not live rideshare data |
 | Road closure feed | P2 | State DOT open data when stable |

@@ -1,4 +1,5 @@
 import WeatherIntelligence from "./components/WeatherIntelligence";
+import EventsIntelligence from "./components/EventsIntelligence";
 
 const LIVE_DEMO_URL = "https://drive-radar-dmv.vercel.app/";
 const REPO_URL = "https://github.com/jmmmdv/driveradardmv";
@@ -19,22 +20,6 @@ const problemPoints = [
 ];
 
 const sampleCards = [
-  {
-    type: "Weather intelligence",
-    icon: "☁",
-    headline: "Light rain this evening",
-    detail: "68°F now · Rain likely 5–9 PM across DC and inner suburbs",
-    signal: "Moderate impact",
-    signalLevel: "medium"
-  },
-  {
-    type: "Events intelligence",
-    icon: "◉",
-    headline: "Capitals game tonight",
-    detail: "Capitol One Arena · 7:00 PM · Expect heavier traffic near Gallery Place",
-    signal: "High nearby demand",
-    signalLevel: "high"
-  },
   {
     type: "Airport activity",
     icon: "✈",
@@ -107,10 +92,11 @@ const coverageAreas = [
 const mvpItems = [
   { label: "Landing page & product story", done: true },
   { label: "Live weather intelligence (NWS API)", done: true },
-  { label: "Static preview cards (events, airports, zones)", done: true },
+  { label: "Events intelligence preview (static)", done: true },
+  { label: "Static preview cards (airports, demand zones)", done: true },
   { label: "Product documentation", done: true },
   { label: "Live Vercel deployment", done: true },
-  { label: "Other live API feeds (events, traffic)", done: false },
+  { label: "Live API feeds (events, traffic, airports)", done: false },
   { label: "User accounts & alerts", done: false },
   { label: "Payments & premium tier", done: false }
 ];
@@ -120,7 +106,7 @@ const roadmapPhases = [
     phase: "Phase 0",
     status: "Now",
     title: "Foundation",
-    items: ["Landing page", "Live weather (NWS)", "Product docs"]
+    items: ["Landing page", "Live weather (NWS)", "Events preview", "Product docs"]
   },
   {
     phase: "Phase 1",
@@ -152,6 +138,7 @@ export default function Home() {
           </a>
           <nav className="headerNav" aria-label="Primary">
             <a href="#weather">Weather</a>
+            <a href="#events">Events</a>
             <a href="#preview">Preview</a>
             <a href="#features">Features</a>
             <a href="#roadmap">Roadmap</a>
@@ -165,7 +152,7 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="heroContent">
-            <p className="eyebrow">DMV driver intelligence · Weather MVP</p>
+            <p className="eyebrow">DMV driver intelligence · Weather &amp; Events MVP</p>
             <h1>Drive smarter across DC, Maryland &amp; Virginia</h1>
             <p className="heroText">
               One regional view for weather, events, airport activity, and demand
@@ -181,9 +168,9 @@ export default function Home() {
               </a>
             </div>
             <div className="statusRow" aria-label="Current project status">
-              <span>Weather MVP</span>
-              <span>Live NWS data</span>
-              <span>Not safety-critical</span>
+              <span>Weather + Events MVP</span>
+              <span>Live NWS weather</span>
+              <span>Static event preview</span>
             </div>
           </div>
         </section>
@@ -210,14 +197,15 @@ export default function Home() {
 
         <WeatherIntelligence />
 
+        <EventsIntelligence />
+
         <section className="previewSection" id="preview" aria-labelledby="preview-title">
           <div className="sectionHeader">
             <p className="sectionLabel">Intelligence preview</p>
             <h2 id="preview-title">What your daily briefing could look like</h2>
             <p className="sectionIntro">
-              These cards use <strong>static sample content</strong> for events,
-              airports, and demand zones. Weather uses live NWS data in the
-              section above when available.
+              These cards use <strong>static sample content</strong> for airports
+              and demand zones. Weather and events have dedicated sections above.
             </p>
           </div>
           <div className="sampleGrid">
@@ -300,9 +288,9 @@ export default function Home() {
               <p className="sectionLabel">MVP status</p>
               <h2 id="mvp-title">Honest progress, no fake integrations</h2>
               <p>
-                This MVP includes live weather from the National Weather Service
-                plus static sample cards for other modules — no accounts or
-                payments yet.
+                This MVP includes live weather from the National Weather Service,
+                a static events intelligence preview, and sample cards for other
+                modules — no accounts or payments yet.
               </p>
             </div>
             <ul className="mvpChecklist">
@@ -376,7 +364,7 @@ export default function Home() {
             <a href={REPO_URL}>GitHub</a>
             <a href="https://www.driveradardmv.com">driveradardmv.com</a>
           </div>
-          <span className="footerBadge">Weather MVP</span>
+          <span className="footerBadge">Weather &amp; Events MVP</span>
         </div>
       </footer>
     </>

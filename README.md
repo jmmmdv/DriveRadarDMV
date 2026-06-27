@@ -12,7 +12,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 | | |
 |---|---|
-| **Stage** | Weather MVP · live NWS data · other modules static |
+| **Stage** | Weather & Events MVP · live NWS weather · static event preview |
 | **Live site** | [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/) |
 | **Region** | DC · Northern Virginia · Maryland suburbs |
 | **Repo** | [github.com/jmmmdv/driveradardmv](https://github.com/jmmmdv/driveradardmv) |
@@ -39,7 +39,7 @@ DriveRadarDMV helps rideshare, delivery, and professional drivers in the DMV pla
 
 DriveRadarDMV is an early-stage SaaS product for the DC metropolitan area. It aggregates weather, events, traffic patterns, airport activity, and road conditions so drivers can plan smarter shifts—not guess.
 
-**What ships today:** a professional landing page with **live DMV weather intelligence** from the National Weather Service (no API key), plus static sample cards for events, airports, and demand zones. No user accounts or payments yet.
+**What ships today:** a professional landing page with **live DMV weather intelligence** from the National Weather Service (no API key), an **Events Intelligence preview** with static driver-focused zone cards, plus sample cards for airports and demand zones. No user accounts or payments yet.
 
 **Try it now:** [https://drive-radar-dmv.vercel.app/](https://drive-radar-dmv.vercel.app/)
 
@@ -78,7 +78,8 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 
 - [x] Mobile-friendly marketing homepage ([`app/page.jsx`](app/page.jsx))
 - [x] **Live weather intelligence** — NWS API via [`lib/weather.js`](lib/weather.js) (static fallback on failure)
-- [x] Static preview cards (events, airports, demand zones)
+- [x] **Events intelligence preview** — static zone cards via [`lib/events.js`](lib/events.js)
+- [x] Static preview cards (airports, demand zones)
 - [x] Product narrative: problem, features, coverage, roadmap, MVP checklist
 - [x] Next.js 14 App Router with production build support
 - [x] Live Vercel deployment — [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
@@ -87,7 +88,7 @@ To regenerate after homepage changes: `npm run screenshots` (see [Local developm
 
 ### Not yet included
 
-- [ ] Live API integrations for events, traffic, and airports
+- [ ] Live API integrations for events, traffic, and airports (preview uses static demo cards)
 - [ ] User accounts or authentication
 - [ ] Database or persistent storage
 - [ ] Payments or subscriptions
@@ -187,7 +188,7 @@ Listens on port `3000` by default.
 
 | Phase | Focus | Target |
 |---|---|---|
-| **Phase 0** *(now)* | Landing page, live weather (NWS), docs, deploy | ✅ Mostly complete |
+| **Phase 0** *(now)* | Landing page, live weather, events preview, docs | ✅ Mostly complete |
 | **Phase 1** | Free/public data + read-only dashboard | Q3 2026 |
 | **Phase 2** | Accounts, saved locations, email alerts | Q4 2026 |
 | **Phase 3** | Premium insights & monetization | 2027 |
@@ -215,7 +216,8 @@ All docs describe the **static MVP stage** unless a phase is explicitly labeled 
 driveradardmv/
 ├── app/
 │   ├── components/
-│   │   └── WeatherIntelligence.jsx   # Live weather section (server component)
+│   │   ├── WeatherIntelligence.jsx   # Live weather section (server component)
+│   │   └── EventsIntelligence.jsx    # Static events preview section
 │   ├── globals.css
 │   ├── layout.jsx
 │   └── page.jsx
@@ -226,7 +228,8 @@ driveradardmv/
 │   ├── DATA_SOURCES.md
 │   └── MONETIZATION.md
 ├── lib/
-│   └── weather.js                    # NWS fetch + driver guidance + fallback
+│   ├── weather.js                    # NWS fetch + driver guidance + fallback
+│   └── events.js                     # Static events preview data
 ├── scripts/
 │   └── capture-screenshots.js
 ├── next.config.mjs

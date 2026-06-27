@@ -4,7 +4,7 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 **Project home:** [README](../README.md) · **Live demo:** [drive-radar-dmv.vercel.app](https://drive-radar-dmv.vercel.app/)
 
-**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api) on the homepage. Events, airports, and demand zones remain static sample cards.
+**Current MVP:** Live weather via the [National Weather Service API](https://www.weather.gov/documentation/services-web-api). Events use **static demo cards** in [`lib/events.js`](../lib/events.js). Airports and demand zones remain static sample cards on the homepage.
 
 **Policy:** Phase 1 uses **free and public sources only**. No paid API subscriptions until product-market fit justifies cost and a billing layer exists.
 
@@ -31,6 +31,30 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 3. Map the current forecast period to driver impact and suggested action
 
 **Not included yet:** hourly forecast, weather alerts banner, historical trends.
+
+---
+
+### Events — static MVP preview *(shipped as demo)*
+
+| Item | Detail |
+|---|---|
+| **Source** | Static data in [`lib/events.js`](../lib/events.js) |
+| **Cost** | Free (no API) |
+| **API key** | Not required |
+| **Implementation** | [`app/components/EventsIntelligence.jsx`](../app/components/EventsIntelligence.jsx) |
+| **Status** | MVP preview only — **not live event data** |
+| **Zones** | Downtown DC / Convention Center, Capital One Arena, Nationals Park / Navy Yard, DCA area, Arlington / Tysons corridor |
+
+**Planned free/public sources for live events (Phase 1+):**
+
+| Source | Type | Cost | Coverage | Notes |
+|---|---|---|---|---|
+| [National Park Service API](https://www.nps.gov/subjects/developer/) | REST | Free | DC monuments, parks | Tourism-driven traffic |
+| [WMATA / Metro alerts](https://www.wmata.com/) | Public feeds | Free | DC metro | Service disruptions affecting commutes |
+| Curated local calendar (internal) | Manual JSON | Free | DMV venues | Caps, Nats Park, Anthem, etc. |
+| DC / venue open data | Various | Free | Major venues | When stable feeds are available |
+
+**Phase 1 approach:** Replace static cards with a maintained seed list of major venues, then add public feeds incrementally. Until then, event cards are clearly labeled **Sample preview**.
 
 ---
 
@@ -71,7 +95,9 @@ Planned data integrations for DriveRadarDMV. This document describes **what we i
 
 ---
 
-### Events & demand drivers
+### Events & demand drivers *(planned — live feeds)*
+
+**Current status:** Static demo cards only. See [Live integrations → Events](#events--static-mvp-preview-shipped-as-demo) above.
 
 | Source | Type | Cost | Coverage | Notes |
 |---|---|---|---|---|
